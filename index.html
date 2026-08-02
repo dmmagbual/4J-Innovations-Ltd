@@ -1,934 +1,1619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="4J Innovations Limited - Leading technology solutions provider in Papua New Guinea. Innovative digital transformation, AI, and enterprise software for PNG businesses.">
-    <meta name="keywords" content="4J Innovations, Papua New Guinea, technology solutions, digital transformation, AI, enterprise software, PNG tech company">
-    <title>4J Innovations Limited | Premium Technology Solutions for Papua New Guinea</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-    <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    
-    <!-- Custom Styles -->
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
-        
-        :root {
-            --primary: #0A2540;
-            --accent: #00D4FF;
-        }
-        
-        body {
-            font-family: 'Inter', system_ui, sans-serif;
-        }
-        
-        .font-display {
-            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
-            font-weight: 600;
-            letter-spacing: -0.025em;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4J Innovation Limited | Signage, Printing, Merchandise & IT Solutions — Papua New Guinea</title>
+<meta name="description" content="4J Innovation Limited — Papua New Guinea's trusted partner for signage & fabrication, printing & branding, merchandise supply, IT solutions and nationwide distribution. Solutions Beyond Expectations.">
+<meta name="theme-color" content="#F15A29">
 
-        .glass {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-        }
+<meta property="og:title" content="4J Innovation Limited — Solutions Beyond Expectations">
+<meta property="og:description" content="Signage, fabrication, printing, merchandise, IT and transport solutions for businesses across Papua New Guinea.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/logo.png">
 
-        .glass-dark {
-            background: rgba(10, 37, 64, 0.75);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
+<link rel="icon" href="assets/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
 
-        .premium-gradient {
-            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
-        }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-        .accent-gradient {
-            background: linear-gradient(90deg, #00D4FF, #00A3CC);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+<style>
+/* ============================================================
+   0. ROOT / RESET
+=============================================================== */
+:root{
+  --orange:#F15A29;
+  --orange-light:#FF8A42;
+  --orange-dark:#D6420F;
+  --yellow:#FFC20E;
+  --dark:#101014;
+  --dark-2:#1A1A22;
+  --dark-3:#232330;
+  --ink:#111827;
+  --gray-700:#374151;
+  --gray-600:#4B5563;
+  --gray-500:#6B7280;
+  --gray-400:#9CA3AF;
+  --gray-200:#E5E7EB;
+  --gray-100:#F3F4F6;
+  --gray-50:#FAFAFA;
+  --white:#FFFFFF;
 
-        .section-header {
-            font-size: clamp(2.25rem, 5vw, 3.5rem);
-            line-height: 1.05;
-            font-weight: 700;
-            letter-spacing: -0.04em;
-        }
+  --grad-brand: linear-gradient(135deg, var(--orange) 0%, var(--orange-light) 50%, var(--yellow) 100%);
+  --grad-dark: linear-gradient(160deg, #16161C 0%, #0B0B0F 100%);
 
-        .nav-scrolled {
-            background: rgba(10, 37, 64, 0.95);
-            backdrop-filter: blur(20px);
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
+  --font-head: 'Plus Jakarta Sans', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
 
-        .premium-shadow {
-            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 10px 10px -6px rgb(0 0 0 / 0.15);
-        }
+  --radius-sm: 10px;
+  --radius-md: 18px;
+  --radius-lg: 28px;
+  --radius-full: 999px;
 
-        .stagger-item {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+  --shadow-sm: 0 2px 10px rgba(16,16,20,.06);
+  --shadow-md: 0 10px 30px rgba(16,16,20,.10);
+  --shadow-lg: 0 25px 60px rgba(16,16,20,.16);
+  --shadow-orange: 0 15px 40px rgba(241,90,41,.30);
 
-        .stagger-item.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+  --ease: cubic-bezier(.22,1,.36,1);
+  --nav-h: 78px;
+}
 
-        .feature-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.1);
-        }
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:var(--white);
+  line-height:1.6;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{ max-width:100%; display:block; }
+a{ color:inherit; text-decoration:none; }
+ul{ list-style:none; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; }
+h1,h2,h3,h4{ font-family:var(--font-head); color:var(--ink); line-height:1.15; font-weight:700; }
+section{ position:relative; scroll-margin-top: var(--nav-h); }
+:focus-visible{ outline:3px solid var(--orange); outline-offset:3px; border-radius:4px; }
 
-        .nav-link {
-            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .nav-link:hover {
-            color: #00D4FF;
-            transform: translateY(-1px);
-        }
+.skip-link{
+  position:absolute; left:-999px; top:0; z-index:9999;
+  background:var(--orange); color:#fff; padding:14px 22px; border-radius:0 0 10px 0; font-weight:600;
+}
+.skip-link:focus{ left:0; }
 
-        .premium-btn {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .premium-btn::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -100%;
-            width: 50%;
-            height: 200%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(255,255,255,0.3),
-                transparent
-            );
-            transition: 0.6s;
-        }
-        
-        .premium-btn:hover::after {
-            left: 250%;
-        }
+/* ============================================================
+   1. UTILITIES
+=============================================================== */
+.container{ width:100%; max-width:1240px; margin:0 auto; padding:0 24px; }
+.section-pad{ padding:110px 0; }
+@media(max-width:768px){ .section-pad{ padding:70px 0; } }
 
-        .stat-number {
-            font-variant-numeric: tabular-nums;
-        }
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase;
+  color:var(--orange-dark); background:rgba(241,90,41,.08);
+  padding:8px 16px; border-radius:var(--radius-full); margin-bottom:18px;
+}
+.eyebrow::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--orange); }
 
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        
-        .scroll-reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+.section-head{ max-width:680px; margin:0 auto 60px; text-align:center; }
+.section-head h2{ font-size:clamp(28px,4vw,42px); margin-bottom:16px; letter-spacing:-.02em; }
+.section-head p{ color:var(--gray-600); font-size:17px; }
+.section-head.left{ margin:0 0 50px; text-align:left; }
 
-        .micro-hover {
-            transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1), 
-                       box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
-        }
-        
-        .micro-hover:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-        }
+.text-grad{
+  background:var(--grad-brand); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
 
-        .ambient-bg {
-            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
-        }
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px;
+  padding:16px 30px; border-radius:var(--radius-full); font-weight:700; font-size:15px;
+  transition:transform .35s var(--ease), box-shadow .35s var(--ease), background .35s var(--ease), color .35s var(--ease);
+  white-space:nowrap; position:relative; isolation:isolate; overflow:hidden;
+}
+.btn svg{ width:18px; height:18px; transition:transform .3s var(--ease); }
+.btn-primary{ background:var(--grad-brand); color:#fff; box-shadow:var(--shadow-orange); }
+.btn-primary:hover{ transform:translateY(-3px); box-shadow:0 20px 45px rgba(241,90,41,.4); }
+.btn-primary:hover svg{ transform:translateX(4px); }
+.btn-dark{ background:var(--dark); color:#fff; }
+.btn-dark:hover{ transform:translateY(-3px); background:#000; box-shadow:var(--shadow-lg); }
+.btn-outline{ background:transparent; border:1.5px solid rgba(17,24,39,.15); color:var(--ink); }
+.btn-outline:hover{ border-color:var(--orange); color:var(--orange-dark); transform:translateY(-3px); }
+.btn-white{ background:#fff; color:var(--orange-dark); }
+.btn-white:hover{ transform:translateY(-3px); box-shadow:0 15px 40px rgba(0,0,0,.25); }
+.btn-block{ width:100%; }
+.btn-sm{ padding:12px 22px; font-size:14px; }
 
-        .tech-grid {
-            background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cpath fill=%22%2300D4FF%22 fill-opacity=%22004%22 d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z%22/%3E%3C/g%3E%3C/svg%27');
-            background-size: 60px 60px;
-        }
+.pill{ display:inline-flex; align-items:center; gap:8px; font-size:13px; font-weight:600; color:var(--gray-600); }
+.pill svg{ width:16px; height:16px; color:var(--orange); flex-shrink:0; }
 
-        .section-divider {
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
-        }
+.chip{
+  display:inline-flex; align-items:center; gap:6px; padding:6px 14px; border-radius:var(--radius-full);
+  background:var(--gray-100); font-size:12.5px; font-weight:700; color:var(--gray-700);
+}
 
-        .modern-testimonial {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+[data-reveal]{ opacity:0; transform:translateY(36px); transition:opacity .8s var(--ease), transform .8s var(--ease); }
+[data-reveal].in-view{ opacity:1; transform:none; }
+[data-reveal="fade"]{ transform:none; }
+[data-reveal="left"]{ transform:translateX(-40px); }
+[data-reveal="left"].in-view{ transform:none; }
+[data-reveal="right"]{ transform:translateX(40px); }
+[data-reveal="right"].in-view{ transform:none; }
+[data-reveal="scale"]{ transform:scale(.92); }
+[data-reveal="scale"].in-view{ transform:scale(1); }
 
-        .faq-question {
-            transition: all 0.3s ease;
-        }
+@media(prefers-reduced-motion:reduce){
+  *{ animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important; }
+}
 
-        .nav-active {
-            color: #00D4FF;
-            position: relative;
-        }
-        
-        .nav-active::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: linear-gradient(to right, #00D4FF, #00A3CC);
-        }
+/* ============================================================
+   2. NAVBAR
+=============================================================== */
+.navbar{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  height:var(--nav-h); display:flex; align-items:center;
+  transition:background .4s var(--ease), box-shadow .4s var(--ease), height .4s var(--ease), backdrop-filter .4s var(--ease);
+}
+.navbar .container{ display:flex; align-items:center; justify-content:space-between; height:100%; }
+.navbar.scrolled{
+  height:68px;
+  background:rgba(255,255,255,.75);
+  backdrop-filter:blur(16px) saturate(180%);
+  -webkit-backdrop-filter:blur(16px) saturate(180%);
+  box-shadow:0 4px 30px rgba(16,16,20,.08);
+}
+.brand{ display:flex; align-items:center; gap:10px; z-index:2; }
+.brand img{ height:46px; width:auto; transition:height .4s var(--ease); }
+.navbar.scrolled .brand img{ height:38px; }
+.brand-fallback{ display:none; font-family:var(--font-head); font-weight:800; font-size:20px; color:var(--ink); }
+.brand-fallback b{ color:var(--orange); }
 
-        .hero-grid {
-            background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%22 fill=%22none%22%3E%3Cpath fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M96 0H0v96h96V0zM48 16v16H32v-2h14V16h2zm16 16v16H48v-2h14V32h2zM32 48v16H16v-2h14V48h2zm16 16v16H32v-2h14v-14h2z%22 fill=%22%2300D4FF%22 fill-opacity=%22006%22/%3E%3C/svg%27');
-            background-size: 96px 96px;
-        }
-    </style>
+.nav-links{ display:flex; align-items:center; gap:34px; }
+.nav-links a{
+  font-size:14.5px; font-weight:600; color:var(--gray-700); position:relative; padding:6px 0;
+  transition:color .3s;
+}
+.nav-links a::after{
+  content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--grad-brand);
+  transition:width .35s var(--ease); border-radius:2px;
+}
+.nav-links a:hover{ color:var(--orange-dark); }
+.nav-links a:hover::after{ width:100%; }
+
+.nav-actions{ display:flex; align-items:center; gap:16px; }
+.nav-actions .btn{ padding:12px 24px; font-size:14px; }
+.nav-phone{ display:flex; align-items:center; gap:8px; font-weight:700; font-size:14px; color:var(--ink); }
+.nav-phone svg{ width:18px; height:18px; color:var(--orange); }
+
+.burger{ display:none; width:44px; height:44px; border-radius:50%; align-items:center; justify-content:center; background:var(--gray-100); z-index:2; }
+.burger span, .burger span::before, .burger span::after{
+  content:''; display:block; width:20px; height:2px; background:var(--ink); border-radius:2px; position:relative; transition:all .3s var(--ease);
+}
+.burger span::before{ position:absolute; top:-7px; }
+.burger span::after{ position:absolute; top:7px; }
+.burger.active span{ background:transparent; }
+.burger.active span::before{ top:0; transform:rotate(45deg); }
+.burger.active span::after{ top:0; transform:rotate(-45deg); }
+
+.mobile-menu{
+  position:fixed; inset:0; z-index:999; background:rgba(16,16,20,.98);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px;
+  opacity:0; visibility:hidden; transform:translateY(-16px);
+  transition:opacity .4s var(--ease), transform .4s var(--ease), visibility .4s;
+}
+.mobile-menu.active{ opacity:1; visibility:visible; transform:none; }
+.mobile-menu a{ color:#fff; font-size:26px; font-weight:700; font-family:var(--font-head); padding:14px 0; }
+.mobile-menu a:hover{ color:var(--orange-light); }
+.mobile-menu .btn{ margin-top:24px; }
+
+@media(max-width:960px){
+  .nav-links, .nav-phone{ display:none; }
+  .burger{ display:flex; }
+  .nav-actions .btn{ display:none; }
+}
+
+/* ============================================================
+   3. HERO
+=============================================================== */
+.hero{
+  position:relative; padding:calc(var(--nav-h) + 70px) 0 100px; overflow:hidden;
+  background:#0C0C10;
+}
+.hero-bg{ position:absolute; inset:0; z-index:0; }
+.blob{ position:absolute; border-radius:50%; filter:blur(90px); opacity:.55; animation:float 16s ease-in-out infinite; }
+.blob1{ width:520px; height:520px; background:var(--orange); top:-160px; right:-120px; }
+.blob2{ width:420px; height:420px; background:var(--yellow); bottom:-140px; left:-100px; animation-delay:-6s; }
+.blob3{ width:300px; height:300px; background:#8b3dff10; top:40%; left:40%; animation-delay:-10s; opacity:.25; }
+@keyframes float{
+  0%,100%{ transform:translate(0,0) scale(1); }
+  33%{ transform:translate(30px,-40px) scale(1.08); }
+  66%{ transform:translate(-25px,25px) scale(.95); }
+}
+.hero-grid-lines{
+  position:absolute; inset:0; z-index:0; opacity:.06;
+  background-image:linear-gradient(#fff 1px,transparent 1px), linear-gradient(90deg,#fff 1px,transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at center, #000 40%, transparent 80%);
+}
+
+.hero .container{ position:relative; z-index:2; display:grid; grid-template-columns:1.05fr .95fr; gap:60px; align-items:center; }
+@media(max-width:960px){ .hero .container{ grid-template-columns:1fr; text-align:center; } }
+
+.hero-eyebrow{
+  display:inline-flex; align-items:center; gap:10px; padding:8px 16px 8px 8px; border-radius:var(--radius-full);
+  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:#fff; font-size:13px; font-weight:600;
+  backdrop-filter:blur(6px); margin-bottom:26px;
+}
+.hero-eyebrow .dot{ width:26px;height:26px;border-radius:50%; background:var(--grad-brand); display:flex;align-items:center;justify-content:center; }
+.hero-eyebrow svg{ width:14px;height:14px; color:#fff; }
+
+.hero h1{ color:#fff; font-size:clamp(36px,5.2vw,60px); letter-spacing:-.03em; margin-bottom:22px; }
+.hero h1 span{ display:block; }
+.hero p.lead{ color:rgba(255,255,255,.68); font-size:18px; max-width:520px; margin-bottom:36px; }
+@media(max-width:960px){ .hero p.lead{ margin-left:auto; margin-right:auto; } }
+
+.hero-ctas{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:44px; }
+@media(max-width:960px){ .hero-ctas{ justify-content:center; } }
+
+.hero-trust{ display:flex; flex-wrap:wrap; gap:26px; }
+@media(max-width:960px){ .hero-trust{ justify-content:center; } }
+.hero-trust .pill{ color:rgba(255,255,255,.7); }
+.hero-trust .pill svg{ color:var(--yellow); }
+
+/* hero visual */
+.hero-visual{ position:relative; height:520px; }
+@media(max-width:960px){ .hero-visual{ height:380px; margin-top:20px; } }
+@media(max-width:520px){ .hero-visual{ height:320px; } }
+
+.hero-img-main{
+  position:absolute; top:0; right:0; width:88%; height:78%; border-radius:var(--radius-lg);
+  overflow:hidden; box-shadow:0 40px 80px rgba(0,0,0,.5); border:1px solid rgba(255,255,255,.1);
+  background:var(--grad-dark);
+}
+.hero-img-main img{ width:100%; height:100%; object-fit:cover; }
+.hero-img-sub{
+  position:absolute; bottom:0; left:0; width:55%; height:52%; border-radius:var(--radius-md);
+  overflow:hidden; box-shadow:0 30px 60px rgba(0,0,0,.5); border:4px solid #0C0C10;
+  animation:floaty 6s ease-in-out infinite;
+  background:var(--dark-3);
+}
+.hero-img-sub img{ width:100%; height:100%; object-fit:cover; }
+@keyframes floaty{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-14px);} }
+
+.floating-card{
+  position:absolute; background:rgba(255,255,255,.9); backdrop-filter:blur(14px);
+  border-radius:16px; padding:14px 18px; box-shadow:0 20px 45px rgba(0,0,0,.25);
+  display:flex; align-items:center; gap:12px; border:1px solid rgba(255,255,255,.5);
+  animation:floaty 7s ease-in-out infinite;
+}
+.floating-card.card1{ top:8%; left:-6%; animation-delay:-1s; }
+.floating-card.card2{ bottom:6%; right:-4%; animation-delay:-3s; }
+@media(max-width:640px){ .floating-card{ display:none; } }
+.floating-card .fc-ico{
+  width:42px; height:42px; border-radius:12px; background:var(--grad-brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.floating-card .fc-ico svg{ width:20px; height:20px; color:#fff; }
+.floating-card strong{ display:block; font-size:16px; font-family:var(--font-head); color:var(--ink); }
+.floating-card span{ font-size:12px; color:var(--gray-500); }
+
+.scroll-cue{
+  position:absolute; bottom:28px; left:50%; transform:translateX(-50%); z-index:2;
+  display:flex; flex-direction:column; align-items:center; gap:8px; color:rgba(255,255,255,.5); font-size:11px; letter-spacing:.1em; text-transform:uppercase;
+}
+.scroll-cue .line{ width:1px; height:36px; background:linear-gradient(#fff,transparent); position:relative; overflow:hidden; }
+.scroll-cue .line::after{ content:''; position:absolute; top:-40%; left:0; width:100%; height:40%; background:var(--orange); animation:scrollLine 2s infinite; }
+@keyframes scrollLine{ 0%{ top:-40%;} 100%{ top:100%;} }
+@media(max-width:960px){ .scroll-cue{ display:none; } }
+
+/* ============================================================
+   4. SOCIAL PROOF + STATS
+=============================================================== */
+.proof{ background:var(--gray-50); padding:64px 0; border-bottom:1px solid var(--gray-200); }
+.proof-label{ text-align:center; font-size:13px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--gray-500); margin-bottom:34px; }
+.logo-row{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:14px;
+}
+.logo-badge{
+  padding:14px 26px; border-radius:14px; background:#fff; border:1px solid var(--gray-200);
+  font-family:var(--font-head); font-weight:700; color:var(--gray-700); font-size:14.5px;
+  transition:all .35s var(--ease); display:flex; align-items:center; gap:8px;
+}
+.logo-badge:hover{ border-color:var(--orange); color:var(--orange-dark); transform:translateY(-4px); box-shadow:var(--shadow-md); }
+.logo-badge span.tag{ font-size:10px; background:var(--gray-100); color:var(--gray-500); padding:2px 7px; border-radius:6px; font-weight:600; }
+
+.stats-bar{
+  margin-top:56px; display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--gray-200);
+  border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm);
+}
+@media(max-width:768px){ .stats-bar{ grid-template-columns:repeat(2,1fr); } }
+.stat{ background:#fff; padding:32px 20px; text-align:center; }
+.stat h3{ font-size:clamp(28px,3.4vw,38px); font-family:var(--font-head); color:var(--ink); margin-bottom:6px; }
+.stat h3 span{ color:var(--orange); }
+.stat p{ font-size:13.5px; color:var(--gray-500); font-weight:600; }
+
+/* ============================================================
+   5. ABOUT
+=============================================================== */
+.about{ background:#fff; }
+.about-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center; }
+@media(max-width:900px){ .about-wrap{ grid-template-columns:1fr; gap:40px; } }
+.about-copy p{ color:var(--gray-600); margin-bottom:18px; font-size:16px; }
+.about-copy p strong{ color:var(--ink); }
+
+.about-cards{ display:flex; flex-direction:column; gap:20px; }
+.about-card{
+  padding:30px; border-radius:var(--radius-md); position:relative; overflow:hidden;
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+.about-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow-lg); }
+.about-card.mission{ background:var(--grad-brand); color:#fff; }
+.about-card.vision{ background:var(--dark); color:#fff; }
+.about-card h4{ color:#fff; font-size:20px; margin-bottom:10px; display:flex; align-items:center; gap:10px; }
+.about-card h4 svg{ width:22px; height:22px; }
+.about-card p{ color:rgba(255,255,255,.85); font-size:15px; }
+
+/* ============================================================
+   6. SERVICES / FEATURES
+=============================================================== */
+.services{ background:var(--gray-50); }
+.services-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+@media(max-width:960px){ .services-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:640px){ .services-grid{ grid-template-columns:1fr; } }
+
+.service-card{
+  background:#fff; border-radius:var(--radius-md); padding:36px 30px; border:1px solid var(--gray-200);
+  transition:transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s var(--ease);
+  position:relative; overflow:hidden;
+}
+.service-card::before{
+  content:''; position:absolute; inset:0; opacity:0; background:var(--grad-brand); transition:opacity .4s;
+  z-index:0;
+}
+.service-card:hover{ transform:translateY(-10px); box-shadow:var(--shadow-lg); border-color:transparent; }
+.service-card > *{ position:relative; z-index:1; }
+.service-icon{
+  width:58px; height:58px; border-radius:16px; background:rgba(241,90,41,.1); display:flex; align-items:center; justify-content:center;
+  margin-bottom:22px; transition:all .4s var(--ease);
+}
+.service-icon svg{ width:28px; height:28px; color:var(--orange); transition:all .4s var(--ease); }
+.service-card:hover .service-icon{ background:var(--grad-brand); transform:rotate(-8deg) scale(1.08); }
+.service-card:hover .service-icon svg{ color:#fff; }
+.service-card h3{ font-size:20px; margin-bottom:12px; }
+.service-card ul{ display:flex; flex-direction:column; gap:8px; margin-top:16px; }
+.service-card li{ font-size:14px; color:var(--gray-600); display:flex; align-items:flex-start; gap:8px; }
+.service-card li svg{ width:15px; height:15px; color:var(--orange); flex-shrink:0; margin-top:3px; }
+.service-card p.desc{ color:var(--gray-600); font-size:14.5px; }
+
+/* ============================================================
+   7. SHOWCASE / PRODUCT GALLERY
+=============================================================== */
+.showcase{ background:#fff; }
+
+.gallery-filters{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:44px; }
+.filter-btn{
+  padding:11px 24px; border-radius:var(--radius-full); border:1.5px solid var(--gray-200);
+  font-weight:700; font-size:13.5px; color:var(--gray-600); background:#fff;
+  transition:all .35s var(--ease);
+}
+.filter-btn:hover{ border-color:var(--orange); color:var(--orange-dark); }
+.filter-btn.active{ background:var(--grad-brand); color:#fff; border-color:transparent; box-shadow:var(--shadow-orange); }
+
+.showcase-grid{ display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:260px; gap:20px; }
+@media(max-width:960px){ .showcase-grid{ grid-template-columns:repeat(2,1fr); grid-auto-rows:220px; } }
+@media(max-width:640px){ .showcase-grid{ grid-template-columns:1fr; grid-auto-rows:240px; } }
+
+.gallery-item{
+  position:relative; border-radius:var(--radius-md); overflow:hidden; cursor:pointer;
+  background:var(--grad-dark);
+  transition:opacity .45s var(--ease), transform .45s var(--ease);
+}
+.gallery-item.big{ grid-column:span 2; grid-row:span 2; }
+@media(max-width:640px){ .gallery-item.big{ grid-column:span 1; grid-row:span 1; } }
+.gallery-item.hide{
+  opacity:0; transform:scale(.9); pointer-events:none;
+  position:absolute; width:0; height:0; overflow:hidden; margin:0; padding:0;
+}
+
+.gallery-item img{
+  width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease), opacity .4s;
+}
+.gallery-item:hover img{ transform:scale(1.09); }
+.gallery-overlay{
+  position:absolute; inset:0; background:linear-gradient(0deg, rgba(10,10,14,.9) 0%, rgba(10,10,14,.15) 55%, transparent 100%);
+  display:flex; flex-direction:column; justify-content:flex-end; padding:24px; color:#fff;
+  opacity:.92; transition:opacity .4s;
+}
+.gallery-item:hover .gallery-overlay{ opacity:1; }
+.gallery-tag{
+  align-self:flex-start; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em;
+  background:var(--grad-brand); padding:5px 12px; border-radius:var(--radius-full); margin-bottom:10px;
+}
+.gallery-overlay h4{ color:#fff; font-size:19px; margin-bottom:6px; }
+.gallery-overlay p{ font-size:13px; color:rgba(255,255,255,.75); max-width:320px; }
+.gallery-zoom{
+  position:absolute; top:16px; right:16px; width:38px; height:38px; border-radius:50%;
+  background:rgba(255,255,255,.16); backdrop-filter:blur(6px); display:flex; align-items:center; justify-content:center;
+  opacity:0; transform:scale(.7); transition:all .35s var(--ease);
+}
+.gallery-item:hover .gallery-zoom{ opacity:1; transform:scale(1); }
+.gallery-zoom svg{ width:16px; height:16px; color:#fff; }
+
+.showcase-caption{
+  text-align:center; margin-top:46px; font-family:var(--font-head); font-size:19px; font-weight:600; color:var(--ink);
+  max-width:640px; margin-left:auto; margin-right:auto; font-style:italic;
+}
+.showcase-caption span{ color:var(--orange); }
+
+/* lightbox */
+.lightbox{
+  position:fixed; inset:0; z-index:2000; background:rgba(8,8,10,.94); display:flex; align-items:center; justify-content:center;
+  opacity:0; visibility:hidden; transition:opacity .35s, visibility .35s; padding:30px;
+}
+.lightbox.active{ opacity:1; visibility:visible; }
+.lightbox-inner{ max-width:900px; width:100%; text-align:center; }
+.lightbox-inner img{ width:100%; max-height:70vh; object-fit:contain; border-radius:16px; }
+.lightbox-inner h4{ color:#fff; margin-top:20px; }
+.lightbox-inner p{ color:rgba(255,255,255,.6); margin-top:6px; }
+.lightbox-close{
+  position:absolute; top:24px; right:30px; width:46px;height:46px; border-radius:50%; background:rgba(255,255,255,.1);
+  display:flex; align-items:center; justify-content:center; color:#fff;
+}
+.lightbox-close svg{ width:20px; height:20px; }
+
+/* ============================================================
+   8. WHY US / BENEFITS
+=============================================================== */
+.why-us{ background:var(--dark); color:#fff; position:relative; overflow:hidden; }
+.why-us::before{
+  content:''; position:absolute; width:600px; height:600px; border-radius:50%; background:var(--orange);
+  filter:blur(160px); opacity:.18; top:-200px; left:-150px;
+}
+.why-us .section-head h2, .why-us .section-head p{ color:#fff; }
+.why-us .section-head p{ color:rgba(255,255,255,.6); }
+
+.benefits-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative; z-index:1; }
+@media(max-width:960px){ .benefits-grid{ grid-template-columns:repeat(2,1fr); } }
+@media(max-width:560px){ .benefits-grid{ grid-template-columns:1fr; } }
+
+.benefit-card{
+  background:rgba(255,255,255,.05); border:1px solid rgba(255,255,255,.1); border-radius:var(--radius-md);
+  padding:34px 26px; backdrop-filter:blur(10px); transition:all .4s var(--ease); position:relative;
+}
+.benefit-card:hover{ background:rgba(255,255,255,.09); transform:translateY(-8px); border-color:rgba(241,90,41,.5); }
+.benefit-num{ font-family:var(--font-head); font-size:38px; font-weight:800; color:rgba(255,255,255,.12); margin-bottom:10px; }
+.benefit-icon{ width:50px; height:50px; border-radius:14px; background:var(--grad-brand); display:flex; align-items:center; justify-content:center; margin-bottom:18px; }
+.benefit-icon svg{ width:24px; height:24px; color:#fff; }
+.benefit-card h4{ color:#fff; font-size:18px; margin-bottom:10px; }
+.benefit-card p{ color:rgba(255,255,255,.6); font-size:14.5px; }
+
+.commitment{
+  margin-top:70px; display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;
+  background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius-lg); padding:50px; position:relative; z-index:1;
+}
+@media(max-width:900px){ .commitment{ grid-template-columns:1fr; padding:34px; } }
+.commitment h3{ color:#fff; font-size:26px; margin-bottom:16px; }
+.commitment p.lead{ color:rgba(255,255,255,.6); margin-bottom:26px; }
+.commit-list{ display:flex; flex-direction:column; gap:14px; }
+.commit-list li{ display:flex; align-items:center; gap:12px; color:#fff; font-weight:600; font-size:15px; }
+.commit-list li .ico{
+  width:28px;height:28px; border-radius:50%; background:var(--grad-brand); display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.commit-list li svg{ width:14px; height:14px; color:#fff; }
+
+/* ============================================================
+   9. TESTIMONIALS
+=============================================================== */
+.testimonials{ background:var(--gray-50); }
+.t-track-wrap{ position:relative; }
+.t-track{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:26px;
+}
+@media(max-width:960px){
+  .t-track{ display:flex; overflow-x:auto; scroll-snap-type:x mandatory; gap:20px; padding-bottom:10px; }
+  .t-track::-webkit-scrollbar{ display:none; }
+  .t-card{ min-width:85%; scroll-snap-align:center; }
+}
+.t-card{
+  background:#fff; border-radius:var(--radius-md); padding:34px; border:1px solid var(--gray-200);
+  transition:all .4s var(--ease); position:relative;
+}
+.t-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+.t-quote-ico{ width:40px; height:40px; color:rgba(241,90,41,.18); margin-bottom:14px; }
+.t-quote-ico svg{ width:100%; height:100%; }
+.stars{ display:flex; gap:3px; margin-bottom:16px; }
+.stars svg{ width:16px; height:16px; color:var(--yellow); }
+.t-card p.quote{ color:var(--gray-700); font-size:15.5px; margin-bottom:24px; }
+.t-person{ display:flex; align-items:center; gap:14px; }
+.t-avatar{
+  width:48px; height:48px; border-radius:50%; background:var(--grad-brand); display:flex; align-items:center; justify-content:center;
+  color:#fff; font-family:var(--font-head); font-weight:700; font-size:17px; flex-shrink:0;
+}
+.t-person strong{ display:block; font-size:14.5px; }
+.t-person span{ font-size:13px; color:var(--gray-500); }
+
+.t-dots{ display:none; justify-content:center; gap:8px; margin-top:24px; }
+@media(max-width:960px){ .t-dots{ display:flex; } }
+.t-dots button{ width:8px; height:8px; border-radius:50%; background:var(--gray-200); transition:all .3s; }
+.t-dots button.active{ width:24px; border-radius:6px; background:var(--orange); }
+
+/* ============================================================
+   10. PRICING
+=============================================================== */
+.pricing{ background:#fff; }
+.pricing-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:26px; align-items:stretch; }
+@media(max-width:960px){ .pricing-grid{ grid-template-columns:1fr; max-width:480px; margin:0 auto; } }
+
+.price-card{
+  border:1px solid var(--gray-200); border-radius:var(--radius-lg); padding:40px 34px; display:flex; flex-direction:column;
+  transition:all .4s var(--ease); position:relative; background:#fff;
+}
+.price-card:hover{ transform:translateY(-8px); box-shadow:var(--shadow-lg); }
+.price-card.featured{
+  background:var(--dark); color:#fff; border-color:transparent; transform:scale(1.04); box-shadow:var(--shadow-lg);
+}
+.price-card.featured:hover{ transform:scale(1.04) translateY(-8px); }
+.price-card.featured *{ color:#fff; }
+.featured-badge{
+  position:absolute; top:-14px; left:50%; transform:translateX(-50%); background:var(--grad-brand); color:#fff;
+  font-size:12px; font-weight:700; padding:6px 18px; border-radius:var(--radius-full); text-transform:uppercase; letter-spacing:.05em;
+}
+.price-card h3{ font-size:22px; margin-bottom:8px; }
+.price-card .p-desc{ color:var(--gray-500); font-size:14px; margin-bottom:24px; }
+.price-card.featured .p-desc{ color:rgba(255,255,255,.6); }
+.price-card .p-value{ font-family:var(--font-head); font-size:32px; font-weight:800; margin-bottom:4px; }
+.price-card .p-note{ font-size:13px; color:var(--gray-500); margin-bottom:28px; padding-bottom:28px; border-bottom:1px solid var(--gray-200); }
+.price-card.featured .p-note{ border-color:rgba(255,255,255,.15); color:rgba(255,255,255,.5); }
+.price-card ul{ display:flex; flex-direction:column; gap:14px; margin-bottom:30px; flex-grow:1; }
+.price-card li{ display:flex; align-items:flex-start; gap:10px; font-size:14.5px; color:var(--gray-600); }
+.price-card.featured li{ color:rgba(255,255,255,.82); }
+.price-card li svg{ width:16px; height:16px; color:var(--orange); margin-top:3px; flex-shrink:0; }
+.price-card.featured li svg{ color:var(--yellow); }
+
+/* ============================================================
+   11. FAQ
+=============================================================== */
+.faq{ background:var(--gray-50); }
+.faq-wrap{ max-width:820px; margin:0 auto; }
+.faq-item{ background:#fff; border:1px solid var(--gray-200); border-radius:16px; margin-bottom:14px; overflow:hidden; transition:border-color .3s; }
+.faq-item.active{ border-color:var(--orange); }
+.faq-q{
+  display:flex; align-items:center; justify-content:space-between; width:100%; padding:22px 26px; text-align:left;
+  font-family:var(--font-head); font-weight:700; font-size:16px; color:var(--ink);
+}
+.faq-q .chev{ width:22px; height:22px; border-radius:50%; background:var(--gray-100); display:flex; align-items:center; justify-content:center; transition:all .35s var(--ease); flex-shrink:0; margin-left:20px; }
+.faq-item.active .faq-q .chev{ background:var(--grad-brand); transform:rotate(180deg); }
+.faq-q .chev svg{ width:12px; height:12px; color:var(--gray-600); transition:color .3s; }
+.faq-item.active .faq-q .chev svg{ color:#fff; }
+.faq-a{ max-height:0; overflow:hidden; transition:max-height .45s var(--ease); }
+.faq-a-inner{ padding:0 26px 24px; color:var(--gray-600); font-size:15px; }
+
+/* ============================================================
+   12. CTA + CONTACT
+=============================================================== */
+.cta{
+  background:var(--grad-dark); position:relative; overflow:hidden; color:#fff;
+}
+.cta::before{
+  content:''; position:absolute; width:700px; height:700px; background:var(--orange); border-radius:50%; filter:blur(180px); opacity:.25; top:-250px; right:-200px;
+}
+.cta-wrap{ display:grid; grid-template-columns:1fr 1fr; gap:60px; position:relative; z-index:1; }
+@media(max-width:960px){ .cta-wrap{ grid-template-columns:1fr; } }
+
+.cta-copy h2{ color:#fff; font-size:clamp(28px,4vw,42px); margin-bottom:18px; letter-spacing:-.02em; }
+.cta-copy p{ color:rgba(255,255,255,.65); font-size:16.5px; margin-bottom:32px; max-width:460px; }
+.cta-contact-list{ display:flex; flex-direction:column; gap:18px; margin-top:10px; }
+.cta-contact-list a, .cta-contact-list div{ display:flex; align-items:center; gap:14px; color:#fff; font-weight:600; font-size:15px; }
+.cta-contact-list .ico{ width:42px;height:42px; border-radius:12px; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.cta-contact-list .ico svg{ width:19px; height:19px; color:var(--orange-light); }
+.cta-contact-list span.small{ display:block; font-size:12.5px; color:rgba(255,255,255,.5); font-weight:500; }
+
+.contact-form{
+  background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); border-radius:var(--radius-lg);
+  padding:40px; backdrop-filter:blur(14px);
+}
+.contact-form h3{ color:#fff; font-size:22px; margin-bottom:6px; }
+.contact-form p.sub{ color:rgba(255,255,255,.55); font-size:14px; margin-bottom:26px; }
+.form-row{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px; }
+@media(max-width:520px){ .form-row{ grid-template-columns:1fr; } }
+.form-group{ margin-bottom:16px; }
+.form-group label{ display:block; font-size:13px; font-weight:600; color:rgba(255,255,255,.7); margin-bottom:8px; }
+.form-group input, .form-group select, .form-group textarea{
+  width:100%; padding:14px 16px; border-radius:12px; border:1px solid rgba(255,255,255,.16);
+  background:rgba(255,255,255,.06); color:#fff; font-family:inherit; font-size:14.5px; transition:all .3s;
+}
+.form-group input::placeholder, .form-group textarea::placeholder{ color:rgba(255,255,255,.35); }
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus{
+  border-color:var(--orange); background:rgba(255,255,255,.1); outline:none;
+}
+.form-group select option{ background:#1a1a22; }
+.form-note{ display:flex; align-items:center; gap:8px; font-size:12.5px; color:rgba(255,255,255,.45); margin-top:14px; }
+.form-note svg{ width:14px; height:14px; }
+.form-success{
+  display:none; align-items:center; gap:12px; background:rgba(34,197,94,.15); border:1px solid rgba(34,197,94,.4);
+  color:#86efac; padding:14px 18px; border-radius:12px; font-size:14px; font-weight:600; margin-bottom:16px;
+}
+.form-success.show{ display:flex; }
+.form-success svg{ width:20px; height:20px; flex-shrink:0; }
+
+/* ============================================================
+   13. FOOTER
+=============================================================== */
+footer{ background:#0B0B0F; color:rgba(255,255,255,.6); padding:80px 0 0; }
+.footer-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.2fr; gap:50px; padding-bottom:60px; border-bottom:1px solid rgba(255,255,255,.08); }
+@media(max-width:900px){ .footer-grid{ grid-template-columns:1fr 1fr; row-gap:40px; } }
+@media(max-width:560px){ .footer-grid{ grid-template-columns:1fr; } }
+
+.footer-brand img{ height:52px; margin-bottom:18px; }
+.footer-brand p{ font-size:14.5px; max-width:280px; margin-bottom:22px; }
+.footer-socials{ display:flex; gap:12px; }
+.footer-socials a{
+  width:40px; height:40px; border-radius:50%; background:rgba(255,255,255,.06); display:flex; align-items:center; justify-content:center;
+  transition:all .3s var(--ease);
+}
+.footer-socials a:hover{ background:var(--grad-brand); transform:translateY(-4px); }
+.footer-socials svg{ width:17px; height:17px; color:#fff; }
+
+footer h5{ color:#fff; font-family:var(--font-head); font-size:15px; margin-bottom:22px; letter-spacing:.02em; }
+.footer-links{ display:flex; flex-direction:column; gap:13px; }
+.footer-links a{ font-size:14.5px; transition:color .3s, padding-left .3s; }
+.footer-links a:hover{ color:var(--orange-light); padding-left:4px; }
+
+.footer-contact li{ display:flex; align-items:flex-start; gap:10px; margin-bottom:16px; font-size:14px; }
+.footer-contact svg{ width:17px; height:17px; color:var(--orange); flex-shrink:0; margin-top:2px; }
+
+.footer-bottom{ padding:26px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; font-size:13px; }
+.footer-bottom .reg{ color:rgba(255,255,255,.35); }
+
+/* ============================================================
+   14. FLOATING BUTTONS
+=============================================================== */
+.floating-actions{ position:fixed; right:24px; bottom:24px; z-index:900; display:flex; flex-direction:column; gap:14px; }
+.fab{
+  width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow-lg); transition:all .35s var(--ease); position:relative;
+}
+.fab.whatsapp{ background:#25D366; }
+.fab.top{ background:var(--dark); opacity:0; visibility:hidden; transform:translateY(20px); }
+.fab.top.show{ opacity:1; visibility:visible; transform:none; }
+.fab:hover{ transform:translateY(-5px) scale(1.06); }
+.fab svg{ width:24px; height:24px; color:#fff; }
+.fab::before{
+  content:''; position:absolute; inset:0; border-radius:50%; border:2px solid #25D366; opacity:.5;
+  animation:pulse 2s infinite;
+}
+.fab.top::before{ display:none; }
+@keyframes pulse{ 0%{ transform:scale(1); opacity:.6;} 100%{ transform:scale(1.6); opacity:0;} }
+
+/* stagger helper */
+.stagger > *{ transition-delay:calc(var(--i,0) * 90ms); }
+</style>
 </head>
-<body class="bg-[#0A2540] text-white overflow-x-hidden">
-    <!-- Sticky Navbar -->
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0A2540]/95 backdrop-blur-xl border-b border-white/10">
-        <div class="max-w-screen-2xl mx-auto">
-            <div class="px-8 py-5 flex items-center justify-between">
-                <!-- Logo -->
-                <div class="flex items-center gap-x-3">
-                    <div class="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-inner">
-                        <img src="assets/icons/logo.svg" alt="4J Innovations Limited" class="w-8 h-8">
-                    </div>
-                    <div>
-                        <div class="font-display text-2xl font-semibold tracking-tighter">4J Innovations</div>
-                        <div class="text-[10px] text-white/50 -mt-1 tracking-[1.5px]">LIMITED</div>
-                    </div>
-                </div>
+<body>
 
-                <!-- Desktop Navigation -->
-                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
-                    <a href="#features" class="nav-link text-white/90 hover:text-white px-1">Solutions</a>
-                    <a href="#showcase" class="nav-link text-white/90 hover:text-white px-1">Platform</a>
-                    <a href="#benefits" class="nav-link text-white/90 hover:text-white px-1">Why Us</a>
-                    <a href="#testimonials" class="nav-link text-white/90 hover:text-white px-1">Stories</a>
-                    <a href="#pricing" class="nav-link text-white/90 hover:text-white px-1">Pricing</a>
-                </div>
+<a href="#main" class="skip-link">Skip to main content</a>
 
-                <!-- CTA Buttons -->
-                <div class="flex items-center gap-x-3">
-                    <a href="#contact" 
-                       class="hidden md:block px-5 py-2.5 text-sm font-medium text-white/90 hover:text-white transition-colors">
-                        Contact Sales
-                    </a>
-                    <a href="#contact" 
-                       class="premium-btn px-6 py-2.5 text-sm font-semibold bg-white text-[#0A2540] rounded-3xl hover:bg-white/95 flex items-center gap-x-2 shadow-xl hover:shadow-2xl">
-                        <span>Get Started</span>
-                        <i class="fas fa-arrow-right text-xs"></i>
-                    </a>
-                    
-                    <!-- Mobile Menu -->
-                    <button id="mobile-menu-btn" 
-                            class="md:hidden w-10 h-10 flex items-center justify-center text-white/90 hover:text-white">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
+<!-- ============ NAVBAR ============ -->
+<header class="navbar" id="navbar">
+  <div class="container">
+    <a href="#top" class="brand" aria-label="4J Innovation Limited home">
+      <img src="assets/logo.png" alt="4J Innovation Limited logo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <span class="brand-fallback"><b>4J</b>&nbsp;Innovation Ltd</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#showcase">Our Work</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="pt-20 pb-16 md:pt-24 md:pb-20 relative premium-gradient overflow-hidden">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <div class="grid md:grid-cols-12 gap-12 items-center pt-8 md:pt-10">
-                <!-- Hero Content -->
-                <div class="md:col-span-7 max-w-2xl">
-                    <div class="inline-flex items-center gap-x-2 bg-white/10 px-4 h-9 rounded-3xl text-xs tracking-[1px] font-medium mb-6 border border-white/10">
-                        <div class="w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse"></div>
-                        <span>PAPUA NEW GUINEA'S LEADING TECH INNOVATOR</span>
-                    </div>
-                    
-                    <h1 class="font-display text-6xl md:text-7xl leading-[1.02] font-semibold tracking-tighter mb-6">
-                        Technology that<br>
-                        <span class="accent-gradient">transforms PNG.</span>
-                    </h1>
-                    
-                    <p class="max-w-lg text-xl text-white/80 leading-relaxed mb-9">
-                        Empowering Papua New Guinea's businesses, government, and communities 
-                        with world-class digital solutions tailored for local impact.
-                    </p>
-                    
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="#contact" 
-                           class="premium-btn flex-1 sm:flex-none justify-center px-8 py-4 bg-[#00D4FF] hover:bg-[#00C4EE] text-[#0A2540] font-semibold text-base rounded-3xl flex items-center gap-x-3 shadow-xl hover:shadow-2xl">
-                            <span>Book a Demo</span>
-                            <i class="fas fa-play text-sm"></i>
-                        </a>
-                        <a href="#showcase" 
-                           class="premium-btn flex-1 sm:flex-none justify-center px-8 py-4 border border-white/30 hover:bg-white/5 text-white font-medium text-base rounded-3xl flex items-center gap-x-3 transition-all">
-                            <span>Explore Platform</span>
-                        </a>
-                    </div>
-                    
-                    <div class="mt-8 flex items-center gap-x-6 text-sm">
-                        <div class="flex -space-x-2">
-                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1005/32/32" class="w-full h-full object-cover"></div>
-                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1011/32/32" class="w-full h-full object-cover"></div>
-                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1009/32/32" class="w-full h-full object-cover"></div>
-                        </div>
-                        <div class="text-white/70 text-sm">
-                            Trusted by <span class="font-semibold text-white">150+</span> PNG organizations
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Hero Visual -->
-                <div class="md:col-span-5 relative">
-                    <div class="relative mx-auto max-w-[420px]">
-                        <div class="glass rounded-3xl p-2 shadow-2xl premium-shadow border border-white/10">
-                            <img src="https://picsum.photos/id/1015/720/640" alt="4J Innovations - Modern technology solutions for Papua New Guinea" 
-                                 class="rounded-3xl shadow-inner w-full aspect-[4/3.5] object-cover">
-                        </div>
-                        
-                        <!-- Floating badge -->
-                        <div class="absolute -bottom-4 -right-4 glass px-5 py-3 rounded-3xl flex items-center gap-x-3 border border-white/10 shadow-xl">
-                            <div>
-                                <div class="text-xs text-white/70">Featured in</div>
-                                <div class="font-semibold">PNG Tech Awards 2025</div>
-                            </div>
-                            <div class="w-9 h-9 flex-shrink-0 bg-[#00D4FF] rounded-2xl flex items-center justify-center">
-                                <i class="fas fa-trophy text-[#0A2540]"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-    </section>
-
-    <!-- Social Proof / Trust Bar -->
-    <div class="border-b border-white/10 bg-[#0A2540]">
-        <div class="max-w-screen-2xl mx-auto px-6 py-7 md:py-8">
-            <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-75">
-                <div class="flex items-center gap-x-3 text-sm font-medium">
-                    <span class="font-semibold">PNG Government</span>
-                </div>
-                <div class="flex items-center gap-x-3 text-sm font-medium">
-                    <span class="font-semibold">Bank of PNG</span>
-                </div>
-                <div class="flex items-center gap-x-3 text-sm font-medium">
-                    <span class="font-semibold">Ok Tedi Mining</span>
-                </div>
-                <div class="flex items-center gap-x-3 text-sm font-medium">
-                    <span class="font-semibold">Telikom PNG</span>
-                </div>
-                <div class="flex items-center gap-x-3 text-sm font-medium">
-                    <span class="font-semibold">National Superannuation</span>
-                </div>
-            </div>
-        </div>
+    <div class="nav-actions">
+      <a href="tel:+67572236795" class="nav-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +675 7223 6795</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Get a Quote</a>
     </div>
 
-    <!-- Features Section -->
-    <section id="features" class="max-w-screen-2xl mx-auto px-6 md:px-12 pt-20 pb-16">
-        <div class="max-w-3xl mx-auto text-center mb-14">
-            <div class="inline text-xs px-3 py-1 rounded-full bg-white/5 text-white/60 tracking-[1.5px]">SOLUTIONS</div>
-            <h2 class="font-display section-header mt-3">Purpose-built for PNG</h2>
-            <p class="text-xl text-white/70 mt-4">Enterprise-grade technology solutions designed specifically for Papua New Guinea's unique challenges and opportunities.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Feature 1 -->
-            <div class="feature-card glass p-8 rounded-3xl group">
-                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-globe fa-2x"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight mb-3">Digital Transformation</h3>
-                <p class="text-white/70 leading-relaxed">Modernize legacy systems and drive digital adoption across government, banking, mining, and SMEs with our proven frameworks.</p>
-                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
-                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
-                </div>
-            </div>
-            
-            <!-- Feature 2 -->
-            <div class="feature-card glass p-8 rounded-3xl group">
-                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-brain fa-2x"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight mb-3">AI &amp; Intelligent Systems</h3>
-                <p class="text-white/70 leading-relaxed">Deploy locally-trained AI models for predictive analytics, document processing, fraud detection and automated decision making.</p>
-                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
-                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
-                </div>
-            </div>
-            
-            <!-- Feature 3 -->
-            <div class="feature-card glass p-8 rounded-3xl group">
-                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
-                    <i class="fas fa-mobile-alt fa-2x"></i>
-                </div>
-                <h3 class="font-semibold text-2xl tracking-tight mb-3">Mobile-First Solutions</h3>
-                <p class="text-white/70 leading-relaxed">Build and deploy high-performance mobile apps and platforms optimized for low-bandwidth environments common across PNG.</p>
-                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
-                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
-                </div>
-            </div>
-        </div>
-    </section>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileMenu"><span></span></button>
+  </div>
+</header>
 
-    <!-- Product Showcase -->
-    <section id="showcase" class="bg-[#081F36] py-20">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <div class="grid md:grid-cols-12 gap-y-16 gap-x-10 items-center">
-                <div class="md:col-span-5">
-                    <div class="sticky top-24">
-                        <div class="text-xs tracking-widest text-[#00D4FF] mb-2 font-medium">THE 4J PLATFORM</div>
-                        <h2 class="font-display text-5xl leading-none tracking-tighter mb-5">One platform.<br>Endless impact.</h2>
-                        <p class="text-white/70 text-xl">Our flagship suite of enterprise software is built to scale across PNG's most demanding industries.</p>
-                        
-                        <div class="mt-10">
-                            <a href="#contact" class="inline-flex px-7 py-3.5 text-sm font-semibold items-center gap-x-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-3xl transition-all">
-                                <span>Request Platform Demo</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="md:col-span-7">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                        <div class="glass-dark p-7 rounded-3xl micro-hover">
-                            <div class="flex justify-between">
-                                <div>
-                                    <div class="font-semibold">4J Connect</div>
-                                    <div class="text-xs text-white/60">Enterprise Connectivity</div>
-                                </div>
-                                <i class="fas fa-network-wired text-xl text-[#00D4FF]"></i>
-                            </div>
-                            <div class="mt-9 text-sm text-white/80">Seamless integration for banking, telco and mining operations across PNG.</div>
-                        </div>
-                        
-                        <div class="glass-dark p-7 rounded-3xl micro-hover">
-                            <div class="flex justify-between">
-                                <div>
-                                    <div class="font-semibold">4J Insight</div>
-                                    <div class="text-xs text-white/60">Business Intelligence</div>
-                                </div>
-                                <i class="fas fa-chart-line text-xl text-[#00D4FF]"></i>
-                            </div>
-                            <div class="mt-9 text-sm text-white/80">Real-time dashboards and predictive analytics for PNG decision makers.</div>
-                        </div>
-                        
-                        <div class="glass-dark p-7 rounded-3xl micro-hover">
-                            <div class="flex justify-between">
-                                <div>
-                                    <div class="font-semibold">4J Secure</div>
-                                    <div class="text-xs text-white/60">Cybersecurity</div>
-                                </div>
-                                <i class="fas fa-shield-alt text-xl text-[#00D4FF]"></i>
-                            </div>
-                            <div class="mt-9 text-sm text-white/80">Locally hosted security solutions compliant with PNG data regulations.</div>
-                        </div>
-                        
-                        <div class="glass-dark p-7 rounded-3xl micro-hover">
-                            <div class="flex justify-between">
-                                <div>
-                                    <div class="font-semibold">4J Engage</div>
-                                    <div class="text-xs text-white/60">Citizen Services</div>
-                                </div>
-                                <i class="fas fa-users text-xl text-[#00D4FF]"></i>
-                            </div>
-                            <div class="mt-9 text-sm text-white/80">Digital government services and citizen engagement platforms.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#showcase">Our Work</a>
+  <a href="#why-us">Why Us</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#pricing">Pricing</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contact" class="btn btn-primary">Get a Free Quote</a>
+</div>
 
-    <!-- Benefits -->
-    <section id="benefits" class="max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
-        <div class="text-center mb-14">
-            <div class="text-xs tracking-[2px] text-[#00D4FF]">THE 4J DIFFERENCE</div>
-            <h2 class="font-display text-5xl tracking-tighter mt-3">Built for real-world PNG challenges</h2>
-        </div>
-        
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            <div class="glass p-8 rounded-3xl">
-                <i class="fas fa-globe-asia-australia text-3xl text-[#00D4FF] mb-6"></i>
-                <div class="font-semibold text-xl">Local Expertise</div>
-                <div class="text-sm text-white/70 mt-3 leading-relaxed">Deep understanding of PNG's cultural, infrastructural, and regulatory landscape.</div>
-            </div>
-            <div class="glass p-8 rounded-3xl">
-                <i class="fas fa-server text-3xl text-[#00D4FF] mb-6"></i>
-                <div class="font-semibold text-xl">On-Premise &amp; Cloud</div>
-                <div class="text-sm text-white/70 mt-3 leading-relaxed">Flexible deployment options including fully on-premise infrastructure in Port Moresby.</div>
-            </div>
-            <div class="glass p-8 rounded-3xl">
-                <i class="fas fa-handshake text-3xl text-[#00D4FF] mb-6"></i>
-                <div class="font-semibold text-xl">Local Support</div>
-                <div class="text-sm text-white/70 mt-3 leading-relaxed">24/7 support from our team based in Port Moresby, Lae, and Mt. Hagen.</div>
-            </div>
-            <div class="glass p-8 rounded-3xl">
-                <i class="fas fa-leaf text-3xl text-[#00D4FF] mb-6"></i>
-                <div class="font-semibold text-xl">Sustainable Impact</div>
-                <div class="text-sm text-white/70 mt-3 leading-relaxed">Solutions designed to deliver measurable economic and social benefits for PNG.</div>
-            </div>
-        </div>
-    </section>
+<main id="main">
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="bg-[#081F36] py-20">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
-            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
-                <div>
-                    <div class="text-xs font-medium tracking-[2px] text-[#00D4FF]">REAL STORIES</div>
-                    <h2 class="font-display text-5xl tracking-tighter">Leaders across PNG trust us</h2>
-                </div>
-                <a href="#contact" class="text-sm mt-4 md:mt-0 font-medium flex items-center gap-x-2 text-[#00D4FF]">View all customer stories <i class="fas fa-arrow-right"></i></a>
-            </div>
-            
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="modern-testimonial glass p-8 rounded-3xl">
-                    <div class="flex mb-6">
-                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
-                    </div>
-                    <div class="text-white/90 leading-relaxed">"4J Innovations transformed how we deliver citizen services. Their platform is now used by over 200,000 Papua New Guineans."</div>
-                    <div class="mt-7 flex items-center gap-x-4">
-                        <div><img src="https://picsum.photos/id/1009/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
-                        <div>
-                            <div class="font-semibold">Dr. Miriam Kila</div>
-                            <div class="text-xs text-white/60">Secretary, Department of ICT, PNG</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modern-testimonial glass p-8 rounded-3xl">
-                    <div class="flex mb-6">
-                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
-                    </div>
-                    <div class="text-white/90 leading-relaxed">"Their AI-powered fraud detection system has saved us millions of Kina in the first year alone. Truly world-class."</div>
-                    <div class="mt-7 flex items-center gap-x-4">
-                        <div><img src="https://picsum.photos/id/1012/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
-                        <div>
-                            <div class="font-semibold">James Numa</div>
-                            <div class="text-xs text-white/60">CTO, Bank of Papua New Guinea</div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modern-testimonial glass p-8 rounded-3xl">
-                    <div class="flex mb-6">
-                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
-                    </div>
-                    <div class="text-white/90 leading-relaxed">"The most reliable technology partner we have worked with in PNG. Their local presence and responsiveness are unmatched."</div>
-                    <div class="mt-7 flex items-center gap-x-4">
-                        <div><img src="https://picsum.photos/id/1006/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
-                        <div>
-                            <div class="font-semibold">Sarah Kaupa</div>
-                            <div class="text-xs text-white/60">Head of Digital, Ok Tedi Mining</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="blob blob1"></div>
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+  </div>
+  <div class="hero-grid-lines"></div>
 
-    <!-- Pricing -->
-    <section id="pricing" class="max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
-        <div class="text-center mb-14">
-            <div class="text-xs font-medium tracking-widest text-[#00D4FF]">PRICING</div>
-            <h2 class="font-display text-5xl tracking-tighter mt-2">Flexible plans for every PNG organization</h2>
-        </div>
-        
-        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
-            <!-- Pricing Tier 1 -->
-            <div class="glass rounded-3xl p-8 flex flex-col">
-                <div>
-                    <div class="font-semibold">Starter</div>
-                    <div class="mt-1 text-4xl font-semibold">K4,200</div>
-                    <div class="text-sm text-white/60">per month</div>
-                </div>
-                <div class="my-6 flex-1">
-                    <ul class="space-y-[13px] text-sm">
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Up to 50 users</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Core platform features</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Basic analytics</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Email support</span></li>
-                    </ul>
-                </div>
-                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl border border-white/30 text-sm font-semibold hover:bg-white/5">Get started</a>
-            </div>
-            
-            <!-- Pricing Tier 2 -->
-            <div class="glass rounded-3xl p-8 flex flex-col border border-[#00D4FF]/60 relative">
-                <div class="absolute -top-3 right-6 bg-[#00D4FF] text-[#0A2540] text-xs font-bold px-4 h-6 flex items-center justify-center rounded-3xl">MOST POPULAR</div>
-                
-                <div>
-                    <div class="font-semibold">Growth</div>
-                    <div class="mt-1 text-4xl font-semibold">K12,900</div>
-                    <div class="text-sm text-white/60">per month</div>
-                </div>
-                <div class="my-6 flex-1">
-                    <ul class="space-y-[13px] text-sm">
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Unlimited users</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Full platform access</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>AI + advanced analytics</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Priority local support</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Custom integrations</span></li>
-                    </ul>
-                </div>
-                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl bg-[#00D4FF] text-[#0A2540] text-sm font-semibold">Start 30-day trial</a>
-            </div>
-            
-            <div class="glass rounded-3xl p-8 flex flex-col">
-                <div>
-                    <div class="font-semibold">Enterprise</div>
-                    <div class="mt-1 text-4xl font-semibold">Custom</div>
-                    <div class="text-sm text-white/60">tailored pricing</div>
-                </div>
-                <div class="my-6 flex-1">
-                    <ul class="space-y-[13px] text-sm">
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Unlimited everything</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>On-premise deployment</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>White-label solutions</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Dedicated PNG team</span></li>
-                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>SLA &amp; compliance support</span></li>
-                    </ul>
-                </div>
-                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl border border-white/30 text-sm font-semibold hover:bg-white/5">Talk to sales</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ -->
-    <section class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-9">
-                <div class="text-xs tracking-[2px] text-[#00D4FF]">QUESTIONS?</div>
-                <h2 class="font-display text-4xl tracking-tighter">Frequently asked questions</h2>
-            </div>
-            
-            <div class="space-y-3">
-                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
-                    <div class="flex items-center justify-between font-medium">
-                        <span>Is 4J Innovations locally owned and operated?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </div>
-                    <div class="hidden pt-3 text-sm text-white/80">Yes. 4J Innovations Limited is 100% Papua New Guinea owned and operated, with headquarters in Port Moresby and offices across the country.</div>
-                </div>
-                
-                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
-                    <div class="flex items-center justify-between font-medium">
-                        <span>Do you support offline and low-bandwidth environments?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </div>
-                    <div class="hidden pt-3 text-sm text-white/80">Absolutely. Our solutions are optimized for PNG's connectivity realities and include robust offline-first capabilities.</div>
-                </div>
-                
-                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
-                    <div class="flex items-center justify-between font-medium">
-                        <span>How long does implementation typically take?</span>
-                        <i class="fas fa-chevron-down transition-transform"></i>
-                    </div>
-                    <div class="hidden pt-3 text-sm text-white/80">Our standard implementations take 6-12 weeks. Enterprise and custom deployments are scoped individually.</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section id="contact" class="premium-gradient py-20 border-t border-white/10">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
-            <div class="max-w-xl mx-auto">
-                <h2 class="font-display text-5xl tracking-tighter">Ready to transform your organization?</h2>
-                <p class="mt-4 text-xl text-white/70">Join the leading institutions driving PNG's digital future with 4J Innovations.</p>
-                
-                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#" onclick="showContactModal()" 
-                       class="premium-btn px-9 py-4 text-lg font-semibold bg-white text-[#0A2540] rounded-3xl flex items-center justify-center gap-x-3 w-full sm:w-auto">
-                        <span>Schedule a consultation</span>
-                    </a>
-                    <a href="mailto:hello@4jinnovations.com.pg" class="px-9 py-4 text-lg font-medium border border-white/40 hover:bg-white/5 rounded-3xl transition-all flex items-center justify-center w-full sm:w-auto">
-                        Email our team
-                    </a>
-                </div>
-                
-                <div class="mt-7 text-xs text-white/50">Port Moresby • Lae • Mt. Hagen • Australia</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="border-t border-white/10 bg-[#081F36]">
-        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 pt-12 pb-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-8">
-                <div>
-                    <div class="flex items-center gap-x-3">
-                        <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
-                            <img src="assets/icons/logo.svg" alt="4J Innovations" class="w-6 h-6">
-                        </div>
-                        <div class="font-display font-semibold text-xl">4J Innovations Limited</div>
-                    </div>
-                    <div class="text-xs text-white/50 mt-2">© 2026 All Rights Reserved. Papua New Guinea.</div>
-                </div>
-                
-                <div class="flex flex-wrap gap-x-7 gap-y-1 text-sm text-white/70">
-                    <a href="#" class="hover:text-white">Privacy</a>
-                    <a href="#" class="hover:text-white">Terms</a>
-                    <a href="#" class="hover:text-white">Security</a>
-                    <a href="#" class="hover:text-white">Careers</a>
-                    <a href="#" class="hover:text-white">Contact</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Contact Modal -->
-    <div id="contact-modal" onclick="hideContactModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-md z-[70] flex items-center justify-center p-6">
-        <div onclick="event.stopImmediatePropagation()" class="glass-dark max-w-md w-full rounded-3xl p-8">
-            <div class="flex justify-between items-start">
-                <div>
-                    <div class="font-display text-3xl tracking-tighter">Let's get started</div>
-                    <div class="text-white/60 text-sm mt-1">Our team will reach out within 24 hours</div>
-                </div>
-                <button onclick="hideContactModal()" class="text-xl text-white/60 hover:text-white">×</button>
-            </div>
-            
-            <form class="mt-8 space-y-4" onsubmit="submitForm(event)">
-                <div class="grid grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs tracking-wider mb-1.5 text-white/60">FIRST NAME</label>
-                        <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="John" required>
-                    </div>
-                    <div>
-                        <label class="block text-xs tracking-wider mb-1.5 text-white/60">LAST NAME</label>
-                        <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="Kaupa" required>
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs tracking-wider mb-1.5 text-white/60">ORGANIZATION</label>
-                    <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="Your company / department" required>
-                </div>
-                <div>
-                    <label class="block text-xs tracking-wider mb-1.5 text-white/60">EMAIL ADDRESS</label>
-                    <input type="email" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="you@organization.pg" required>
-                </div>
-                
-                <button type="submit" class="premium-btn mt-4 w-full py-4 bg-[#00D4FF] hover:bg-[#00C4EE] text-[#0A2540] font-semibold rounded-3xl">Submit request</button>
-            </form>
-        </div>
+  <div class="container">
+    <div class="hero-copy">
+      <div class="hero-eyebrow" data-reveal="fade">
+        <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span>
+        IPA Registered • Port Moresby, PNG
+      </div>
+      <h1 data-reveal="fade" style="transition-delay:.1s">
+        <span>Solutions Beyond</span>
+        <span class="text-grad">Expectations</span>
+      </h1>
+      <p class="lead" data-reveal="fade" style="transition-delay:.2s">
+        4J Innovation Limited delivers premium signage &amp; fabrication, printing &amp; branding,
+        merchandise supply, IT solutions and nationwide distribution — all under one
+        dependable roof, built for businesses across Papua New Guinea.
+      </p>
+      <div class="hero-ctas" data-reveal="fade" style="transition-delay:.3s">
+        <a href="#contact" class="btn btn-primary">
+          Get a Free Quote
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#showcase" class="btn btn-outline" style="border-color:rgba(255,255,255,.25); color:#fff;">
+          Explore Our Work
+        </a>
+      </div>
+      <div class="hero-trust" data-reveal="fade" style="transition-delay:.4s">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z"/></svg> Cert. No. 110964</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg> Boroko, Port Moresby, NCD</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M3 12h18M3 6h18M3 18h18"/></svg> Nationwide Delivery</span>
+      </div>
     </div>
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        // Tailwind script
-        function initializeTailwind() {
-            document.documentElement.style.setProperty('--accent', '#00D4FF');
-        }
-        
-        // Navbar scroll effect
-        function initNavbar() {
-            const navbar = document.getElementById('navbar');
-            
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('nav-scrolled');
-                } else {
-                    navbar.classList.remove('nav-scrolled');
-                }
-            });
-            
-            // Mobile menu
-            const mobileBtn = document.getElementById('mobile-menu-btn');
-            if (mobileBtn) {
-                mobileBtn.addEventListener('click', () => {
-                    const navLinks = document.createElement('div');
-                    navLinks.className = `fixed inset-0 bg-[#0A2540] z-[60] flex flex-col p-8 pt-20`;
-                    navLinks.innerHTML = `
-                        <div class="flex flex-col text-xl gap-y-6 font-medium">
-                            <a href="#features" class="py-2">Solutions</a>
-                            <a href="#showcase" class="py-2">Platform</a>
-                            <a href="#benefits" class="py-2">Why Us</a>
-                            <a href="#testimonials" class="py-2">Stories</a>
-                            <a href="#pricing" class="py-2">Pricing</a>
-                            <div class="pt-4">
-                                <a href="#contact" class="premium-btn block px-8 py-4 text-center bg-white text-[#0A2540] rounded-3xl font-semibold">Get Started</a>
-                            </div>
-                        </div>
-                    `;
-                    document.body.appendChild(navLinks);
-                    
-                    navLinks.addEventListener('click', (e) => {
-                        if (e.target.tagName === 'A') {
-                            navLinks.remove();
-                        }
-                    });
-                });
-            }
-        }
-        
-        // Scroll reveal animations
-        function initScrollReveal() {
-            const reveals = document.querySelectorAll('.scroll-reveal, .stagger-item');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                        
-                        // Stagger children if parent has stagger-items
-                        if (entry.target.classList.contains('stagger-item')) {
-                            const children = entry.target.parentElement.querySelectorAll('.stagger-item');
-                            children.forEach((child, index) => {
-                                setTimeout(() => {
-                                    child.classList.add('visible');
-                                }, index * 90);
-                            });
-                        }
-                        
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.15 });
-            
-            reveals.forEach(el => observer.observe(el));
-            
-            // Auto apply stagger to feature cards
-            const featureCards = document.querySelectorAll('#features .feature-card');
-            featureCards.forEach((card, i) => {
-                card.style.transitionDelay = `${i * 80}ms`;
-                card.classList.add('stagger-item');
-                observer.observe(card);
-            });
-        }
-        
-        // FAQ Toggle
-        function toggleFAQ(element) {
-            const answer = element.querySelector('div:last-child');
-            const icon = element.querySelector('i');
-            
-            if (answer.classList.contains('hidden')) {
-                answer.classList.remove('hidden');
-                icon.style.transform = 'rotate(180deg)';
-            } else {
-                answer.classList.add('hidden');
-                icon.style.transform = '';
-            }
-        }
-        
-        // Contact Modal
-        function showContactModal() {
-            document.getElementById('contact-modal').classList.remove('hidden');
-            document.getElementById('contact-modal').classList.add('flex');
-        }
-        
-        function hideContactModal() {
-            const modal = document.getElementById('contact-modal');
-            modal.classList.remove('flex');
-            modal.classList.add('hidden');
-        }
-        
-        function submitForm(e) {
-            e.preventDefault();
-            const modal = document.getElementById('contact-modal');
-            
-            modal.innerHTML = `
-                <div onclick="event.stopImmediatePropagation()" class="glass-dark max-w-md w-full rounded-3xl p-8 text-center">
-                    <div class="mx-auto w-16 h-16 flex items-center justify-center bg-[#00D4FF]/10 rounded-full">
-                        <i class="fas fa-check text-[#00D4FF] text-3xl"></i>
-                    </div>
-                    <div class="font-display text-3xl mt-6 tracking-tight">Thank you!</div>
-                    <div class="text-white/70 mt-3">We've received your request.<br>Our PNG team will contact you shortly.</div>
-                    
-                    <button onclick="location.reload()" class="mt-8 w-full py-3.5 text-sm bg-white/10 rounded-3xl font-medium">Back to homepage</button>
-                </div>
-            `;
-        }
-        
-        // Micro interactions
-        function initMicroInteractions() {
-            // Add hover states for premium buttons
-            const buttons = document.querySelectorAll('.premium-btn');
-            buttons.forEach(btn => {
-                btn.addEventListener('mouseenter', () => {
-                    btn.style.transform = 'translateY(-1px)';
-                });
-                btn.addEventListener('mouseleave', () => {
-                    btn.style.transform = '';
-                });
-            });
-            
-            // Smooth scroll for nav links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function(e) {
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        e.preventDefault();
-                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                });
-            });
-            
-            // Ambient background subtle animation on hero
-            const hero = document.querySelector('.premium-gradient');
-            if (hero) {
-                setInterval(() => {
-                    hero.style.transitionDuration = '1800ms';
-                    hero.style.backgroundPosition = Math.random() > 0.5 ? '30% 50%' : '70% 50%';
-                }, 4500);
-            }
-        }
-        
-        // Initialize everything
-        function initialize() {
-            initializeTailwind();
-            initNavbar();
-            initScrollReveal();
-            initMicroInteractions();
-            
-            // Add initial scroll reveal classes to key sections
-            const sections = document.querySelectorAll('section');
-            sections.forEach(section => {
-                section.classList.add('scroll-reveal');
-            });
-            
-            // Easter egg: logo click
-            const logo = document.querySelector('nav .flex.items-center');
-            if (logo) {
-                logo.addEventListener('click', () => {
-                    logo.style.transitionDuration = '150ms';
-                    logo.style.transform = 'scale(0.95)';
-                    setTimeout(() => {
-                        logo.style.transform = 'scale(1)';
-                    }, 180);
-                });
-            }
-            
-            // Keyboard accessibility
-            document.addEventListener('keydown', (e) => {
-                if (e.key === "Escape") {
-                    const modal = document.getElementById('contact-modal');
-                    if (!modal.classList.contains('hidden')) {
-                        hideContactModal();
-                    }
-                }
-            });
-            
-            console.log('%c[4J Innovations] Premium PNG landing page initialized successfully.', 'color:#64748b');
-        }
-        
-        // Boot application
-        window.onload = initialize;
-    </script>
+    <div class="hero-visual" data-reveal="right">
+      <div class="hero-img-main">
+        <img src="assets/images/landcros-front.jpg" alt="LANDCROS large-format pylon signage designed and engineered by 4J Innovation" onerror="this.remove()">
+      </div>
+      <div class="hero-img-sub">
+        <img src="assets/images/pih-wayfinding.jpg" alt="PIH Medical Centre wayfinding signage installed by 4J Innovation" onerror="this.remove()">
+      </div>
+      <div class="floating-card card1">
+        <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 7h-9m0 0 4-4m-4 4 4 4M4 17h9m0 0-4 4m4-4-4-4"/></svg></div>
+        <div><strong>5 Divisions</strong><span>One streamlined platform</span></div>
+      </div>
+      <div class="floating-card card2">
+        <div class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4M12 3l8 4-8 4-8-4z"/></svg></div>
+        <div><strong>100% PNG</strong><span>Owned &amp; Operated</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="proof" id="clients">
+  <div class="container">
+    <p class="proof-label" data-reveal="fade">Trusted by leading organizations across Papua New Guinea</p>
+    <div class="logo-row" data-reveal="fade">
+      <div class="logo-badge">Pacific International Hospital <span class="tag">PIH</span></div>
+      <div class="logo-badge">Pan Pacific</div>
+      <div class="logo-badge">VECL</div>
+      <div class="logo-badge">Pacific Smart Signs Ltd <span class="tag">PSSL</span></div>
+      <div class="logo-badge">Ombudsman Commission PNG</div>
+      <div class="logo-badge">Private &amp; Corporate Clients</div>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat" data-reveal="scale"><h3><span>2024</span></h3><p>Registered With IPA PNG</p></div>
+      <div class="stat" data-reveal="scale" style="transition-delay:.1s"><h3><span data-count="5">0</span>+</h3><p>Core Service Divisions</p></div>
+      <div class="stat" data-reveal="scale" style="transition-delay:.2s"><h3><span data-count="100">0</span>%</h3><p>PNG Owned &amp; Operated</p></div>
+      <div class="stat" data-reveal="scale" style="transition-delay:.3s"><h3><span>NCD</span>+</h3><p>Nationwide Service Reach</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about section-pad" id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-copy" data-reveal="left">
+        <span class="eyebrow">Who We Are</span>
+        <h2 style="font-size:clamp(28px,4vw,38px); margin-bottom:22px;">Built to be Papua New Guinea's <span class="text-grad">most dependable partner</span></h2>
+        <p>4J Innovation Limited is a Papua New Guinea based retail, wholesale, merchandising, signage, fabrication, and technical solutions company committed to delivering reliable products and professional services across multiple industries.</p>
+        <p>Founded on a vision to provide quality solutions through <strong>innovation, efficiency, and integrity</strong>, we've built strong partnerships with clients through dependable service, technical expertise, and customer-focused operations.</p>
+        <p>We combine merchandising, signage fabrication, printing, networking solutions, consultancy and distribution support into <strong>one streamlined business platform</strong> — designed to support both private and commercial sectors nationwide.</p>
+        <a href="#services" class="btn btn-dark" style="margin-top:10px;">See What We Do <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+
+      <div class="about-cards" data-reveal="right">
+        <div class="about-card mission">
+          <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1 3-6z"/></svg> Our Mission</h4>
+          <p>To provide high-quality products and services through strong customer relationships, reliable supply-chain systems, innovative solutions, and professional business ethics — ensuring efficiency, value, and long-term client satisfaction.</p>
+        </div>
+        <div class="about-card vision">
+          <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg> Our Vision</h4>
+          <p>To become one of Papua New Guinea's preferred providers of merchandising, signage, distribution, technical consultancy, and transportation services — delivering dependable nationwide solutions with professionalism and innovation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SERVICES / FEATURES ============ -->
+<section class="services section-pad" id="services">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow">Our Core Services</span>
+      <h2>One Platform. Every Solution You Need.</h2>
+      <p>We've combined five specialist divisions into one streamlined platform, so you get dependable quality without juggling multiple vendors.</p>
+    </div>
+
+    <div class="services-grid stagger">
+      <div class="service-card" data-reveal="scale" style="--i:0">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg></div>
+        <h3>Retail &amp; Wholesale Merchandise</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> General merchandise supply</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Commercial product sourcing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Bulk distribution solutions</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Corporate procurement support</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-reveal="scale" style="--i:1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M6 21V9l6-6 6 6v12M9 21v-6h6v6"/></svg></div>
+        <h3>Signage &amp; Fabrication</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Steel &amp; aluminum fabrication</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Indoor &amp; outdoor signage</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Pylon signs &amp; acrylic systems</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Commercial branding installs</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-reveal="scale" style="--i:2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg></div>
+        <h3>Printing &amp; Branding Services</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Screen printing &amp; Heat Transfer Vinyl (HTV)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Digital &amp; dye-sublimation</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Embroidery &amp; promo products</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Stickers, labels &amp; directional signage</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-reveal="scale" style="--i:3">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+        <h3>IT &amp; Technical Solutions</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Computer servicing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Software consultancy &amp; supply</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Network installation &amp; support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> System setup &amp; maintenance</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-reveal="scale" style="--i:4">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <h3>Transportation &amp; Delivery</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Delivery logistics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Customized delivery schedules</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Distribution support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Nationwide transportation</li>
+        </ul>
+      </div>
+
+      <div class="service-card" data-reveal="scale" style="--i:5; background:var(--grad-brand); border:none;">
+        <div style="position:relative; z-index:1; height:100%; display:flex; flex-direction:column; justify-content:center;">
+          <h3 style="color:#fff;">Need a Custom Solution?</h3>
+          <p class="desc" style="color:rgba(255,255,255,.9); margin-bottom:24px;">Tell us about your project and our team will design a tailored package for you — no matter the size.</p>
+          <a href="#contact" class="btn btn-white btn-sm" style="align-self:flex-start;">Talk to Our Team</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRODUCT SHOWCASE ============ -->
+<section class="showcase section-pad" id="showcase">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow">Featured Projects &amp; Signage Works</span>
+      <h2>Real Installations. Real Impact.</h2>
+      <p>See how we bring brands to life across Papua New Guinea — from hospital wayfinding to large-scale corporate pylon signage and branded merchandise.</p>
+    </div>
+
+    <div class="gallery-filters" data-reveal="fade">
+      <button class="filter-btn active" data-filter="all">All Work</button>
+      <button class="filter-btn" data-filter="signage">Signage &amp; Fabrication</button>
+      <button class="filter-btn" data-filter="printing">Printing &amp; Branding</button>
+      <button class="filter-btn" data-filter="merch">Merchandise</button>
+    </div>
+
+    <div class="showcase-grid" id="galleryGrid">
+
+      <!-- PIH Wayfinding Sign -->
+      <div class="gallery-item big" data-category="signage" data-reveal="scale" data-lightbox
+           data-title="Pacific International Hospital — Wayfinding Signage"
+           data-desc="Precision-mounted directional signage guiding patients to the PIH Medical Centre — durable outdoor-rated print, clean corporate branding and clear 100m directional callout.">
+        <img src="assets/images/pih-wayfinding.jpg" alt="PIH Medical Centre directional wayfinding sign mounted on a pole" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Healthcare Signage</span>
+          <h4>PIH Medical Centre Wayfinding</h4>
+          <p>Directional signage with precision mounting &amp; finishing</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- LANDCROS Angled Render -->
+      <div class="gallery-item" data-category="signage" data-reveal="scale" style="transition-delay:.1s" data-lightbox
+           data-title="LANDCROS Branding — Pylon Signage Concept (Angled View)"
+           data-desc="Large-scale pylon sign structure design featuring illuminated digital display, structural fabrication capability and corporate branding integration.">
+        <img src="assets/images/landcros-angle.jpg" alt="LANDCROS pylon signage 3D render, angled perspective view" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Pylon Signage</span>
+          <h4>LANDCROS Pylon Concept</h4>
+          <p>Industrial outdoor signage system design</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- LANDCROS Front Render -->
+      <div class="gallery-item" data-category="signage" data-reveal="scale" style="transition-delay:.2s" data-lightbox
+           data-title="LANDCROS Branding — Pylon Signage Concept (Front View)"
+           data-desc="High-visibility commercial advertising display engineered for corporate impact, durability and maximum roadside visibility.">
+        <img src="assets/images/landcros-front.jpg" alt="LANDCROS pylon signage 3D render, front-facing view" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Pylon Signage</span>
+          <h4>LANDCROS Corporate Pylon</h4>
+          <p>High-visibility commercial advertising display</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- PIH Roll-up Banner -->
+      <div class="gallery-item" data-category="printing" data-reveal="scale" style="transition-delay:.3s" data-lightbox
+           data-title="Pacific International Hospital — Roll-Up Banner"
+           data-desc="Full-colour large format print — 'Your Complete Care Network' pull-up banner featuring PIH's nationwide medical centre map, produced with premium digital printing.">
+        <img src="assets/images/pih-banner.jpg" alt="Pacific International Hospital roll-up banner, Your Complete Care Network" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Large Format Print</span>
+          <h4>PIH Roll-Up Banner</h4>
+          <p>Digital print &amp; corporate branding display</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- PIH Story Wall -->
+      <div class="gallery-item" data-category="signage" data-reveal="scale" style="transition-delay:.4s" data-lightbox
+           data-title="Pacific International Hospital — Milestone Story Wall"
+           data-desc="Indoor acrylic-mounted timeline signage showcasing PIH's history and milestones — precision print, mount and finish.">
+        <img src="assets/images/pih-story-wall.jpg" alt="Pacific International Hospital indoor milestone timeline wall signage" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Indoor Signage</span>
+          <h4>PIH Milestone Wall</h4>
+          <p>Acrylic signage &amp; indoor branding</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Emergency Backlit Sign -->
+      <div class="gallery-item" data-category="signage" data-reveal="scale" style="transition-delay:.5s" data-lightbox
+           data-title="Backlit Emergency Signage"
+           data-desc="Illuminated channel signage fabricated for 24/7 emergency service visibility and public safety communication.">
+        <img src="assets/images/pih-emergency.jpg" alt="Illuminated Emergency signage installation" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Backlit Signage</span>
+          <h4>Emergency Signage</h4>
+          <p>High-visibility LED backlit installation</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- City Pharmacy -->
+      <div class="gallery-item" data-category="signage" data-reveal="scale" style="transition-delay:.6s" data-lightbox
+           data-title="City Pharmacy — Illuminated Signage"
+           data-desc="Custom illuminated channel-letter signage designed and fabricated for retail storefront branding.">
+        <img src="assets/images/city-pharmacy.jpg" alt="City Pharmacy illuminated storefront signage" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Retail Signage</span>
+          <h4>City Pharmacy</h4>
+          <p>Illuminated channel-letter branding</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Merch set -->
+      <div class="gallery-item" data-category="merch" data-reveal="scale" style="transition-delay:.7s" data-lightbox
+           data-title="PNGEITI Branded Merchandise Set"
+           data-desc="Embroidered cap, printed notebook, custom water bottle and woven lanyard — full corporate promotional kit produced for PNGEITI.">
+        <img src="assets/images/merch-set.jpg" alt="PNGEITI branded cap, notebook, water bottle and lanyard set" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Promo Merchandise</span>
+          <h4>PNGEITI Corporate Kit</h4>
+          <p>Embroidery, printing &amp; branded products</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Merch pen -->
+      <div class="gallery-item" data-category="merch" data-reveal="scale" style="transition-delay:.8s" data-lightbox
+           data-title="PNGEITI Branded Pen"
+           data-desc="Precision pad-printed corporate pen — part of the PNGEITI promotional merchandise range.">
+        <img src="assets/images/merch-pen.jpg" alt="PNGEITI branded corporate pen" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Promo Merchandise</span>
+          <h4>PNGEITI Pen</h4>
+          <p>Branded corporate stationery</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+      <!-- Merch mug -->
+      <div class="gallery-item" data-category="merch" data-reveal="scale" style="transition-delay:.9s" data-lightbox
+           data-title="PNGEITI Branded Insulated Mug"
+           data-desc="Custom-branded stainless steel travel mug produced as part of PNGEITI's corporate promotional merchandise range.">
+        <img src="assets/images/merch-mug.jpg" alt="PNGEITI branded stainless steel insulated mug" loading="lazy" onerror="this.remove()">
+        <div class="gallery-overlay">
+          <span class="gallery-tag">Promo Merchandise</span>
+          <h4>PNGEITI Insulated Mug</h4>
+          <p>Custom branded drinkware</p>
+        </div>
+        <div class="gallery-zoom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35M11 8v6M8 11h6"/></svg></div>
+      </div>
+
+    </div>
+
+    <p class="showcase-caption" data-reveal="fade">"Professional signage and branding solutions engineered for <span>visibility, durability, and corporate impact.</span>"</p>
+  </div>
+</section>
+
+<!-- ============ WHY US / BENEFITS ============ -->
+<section class="why-us section-pad" id="why-us">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow" style="background:rgba(255,255,255,.1); color:var(--yellow);">Why Choose Us</span>
+      <h2>Why Businesses Across PNG Choose 4J</h2>
+      <p>We combine speed, expertise and flexibility to consistently exceed project expectations.</p>
+    </div>
+
+    <div class="benefits-grid stagger">
+      <div class="benefit-card" data-reveal="scale" style="--i:0">
+        <div class="benefit-num">01</div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h4>Speed &amp; Reliability</h4>
+        <p>We understand deadlines. Our operational workflow ensures fast turnaround times, efficient logistics and dependable service delivery.</p>
+      </div>
+      <div class="benefit-card" data-reveal="scale" style="--i:1">
+        <div class="benefit-num">02</div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="8" r="5"/><path d="M20 21a8 8 0 0 0-16 0"/></svg></div>
+        <h4>Technical Expertise</h4>
+        <p>Our experienced team provides practical recommendations and approved solutions tailored to each client's project requirements.</p>
+      </div>
+      <div class="benefit-card" data-reveal="scale" style="--i:2">
+        <div class="benefit-num">03</div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 21v-7M4 10V3M12 21v-11M12 6V3M20 21v-5M20 12V3"/><circle cx="4" cy="12" r="2"/><circle cx="12" cy="8" r="2"/><circle cx="20" cy="14" r="2"/></svg></div>
+        <h4>Customized Solutions</h4>
+        <p>Every client has different needs. We provide flexible service packages and personalized delivery systems for projects of all sizes.</p>
+      </div>
+      <div class="benefit-card" data-reveal="scale" style="--i:3">
+        <div class="benefit-num">04</div>
+        <div class="benefit-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5c0-1.5 1.2-2.5 2.5-2.5s2.5.8 2.5 2c0 2-5 1.7-5 4 0 1.2 1.2 2 2.5 2s2.5-1 2.5-2.5"/></svg></div>
+        <h4>Competitive Pricing</h4>
+        <p>We maintain cost-effective pricing without compromising product quality or service standards.</p>
+      </div>
+    </div>
+
+    <div class="commitment">
+      <div data-reveal="left">
+        <span class="eyebrow" style="background:rgba(255,255,255,.1); color:var(--yellow);">Client Satisfaction</span>
+        <h3>Building long-term partnerships, one project at a time</h3>
+        <p class="lead">At 4J Innovation Limited, we believe in building long-term partnerships with our clients. Our commitment to integrity, professionalism and responsive service allows us to consistently meet project expectations.</p>
+        <a href="#testimonials" class="btn btn-primary btn-sm">Read Client Stories</a>
+      </div>
+      <ul class="commit-list" data-reveal="right">
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Clear communication throughout every project</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Timely project delivery, every time</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Reliable after-sales support</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Flexible operational solutions</li>
+        <li><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></span> Consistent product quality</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials section-pad" id="testimonials">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow">Testimonials</span>
+      <h2>What Our Clients Say</h2>
+      <p>Trusted by hospitals, corporates and private clients across Papua New Guinea.</p>
+    </div>
+
+    <div class="t-track-wrap">
+      <div class="t-track" id="tTrack">
+        <div class="t-card" data-reveal="scale">
+          <div class="t-quote-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4a4 4 0 0 1-4 4H6v-2h1a2 2 0 0 0 2-2H7V7zm10 0h4v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2h-2V7z"/></svg></div>
+          <div class="stars">★★★★★</div>
+          <p class="quote">"4J Innovation delivered our medical centre signage with real precision — from acrylic displays to backlit branding, every detail met our facility's professional standards."</p>
+          <div class="t-person">
+            <div class="t-avatar">PIH</div>
+            <div><strong>Facilities Management</strong><span>Pacific International Hospital</span></div>
+          </div>
+        </div>
+
+        <div class="t-card" data-reveal="scale" style="transition-delay:.12s">
+          <div class="t-quote-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4a4 4 0 0 1-4 4H6v-2h1a2 2 0 0 0 2-2H7V7zm10 0h4v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2h-2V7z"/></svg></div>
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Reliable, fast, and genuinely easy to work with. Their team handled our corporate branding and pylon signage from concept to installation without a hitch."</p>
+          <div class="t-person">
+            <div class="t-avatar">LC</div>
+            <div><strong>Operations Team</strong><span>LANDCROS Project Partner</span></div>
+          </div>
+        </div>
+
+        <div class="t-card" data-reveal="scale" style="transition-delay:.24s">
+          <div class="t-quote-ico"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h4v4a4 4 0 0 1-4 4H6v-2h1a2 2 0 0 0 2-2H7V7zm10 0h4v4a4 4 0 0 1-4 4h-1v-2h1a2 2 0 0 0 2-2h-2V7z"/></svg></div>
+          <div class="stars">★★★★★</div>
+          <p class="quote">"Great value without compromising quality. 4J is now our go-to partner for merchandise, printing, and branding across every campaign we run."</p>
+          <div class="t-person">
+            <div class="t-avatar">CC</div>
+            <div><strong>Corporate Client</strong><span>Port Moresby, NCD</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="t-dots" id="tDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PRICING ============ -->
+<section class="pricing section-pad" id="pricing">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow">Packages</span>
+      <h2>Flexible Packages For Every Project</h2>
+      <p>Every client is different — that's why we offer tailored packages instead of one-size-fits-all pricing. Get a free, no-obligation quote today.</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card" data-reveal="scale">
+        <h3>Essential</h3>
+        <p class="p-desc">For small businesses &amp; individuals</p>
+        <div class="p-value">Custom Quote</div>
+        <div class="p-note">Priced per project scope</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Standard signage &amp; printing</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Small-batch merchandise orders</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Stickers, labels &amp; promo items</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Email &amp; phone support</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Standard turnaround time</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-block">Request Quote</a>
+      </div>
+
+      <div class="price-card featured" data-reveal="scale" style="transition-delay:.12s">
+        <span class="featured-badge">Most Popular</span>
+        <h3>Professional</h3>
+        <p class="p-desc">For growing businesses &amp; retailers</p>
+        <div class="p-value">Custom Quote</div>
+        <div class="p-note">Volume-based, tailored pricing</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Custom signage &amp; fabrication</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Bulk merchandise &amp; branding</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Priority turnaround</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Dedicated account contact</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Optional IT support add-on</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-block">Request Quote</a>
+      </div>
+
+      <div class="price-card" data-reveal="scale" style="transition-delay:.24s">
+        <h3>Enterprise</h3>
+        <p class="p-desc">For corporations &amp; institutions</p>
+        <div class="p-value">Custom Quote</div>
+        <div class="p-note">Contract &amp; nationwide pricing</div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Full-scale fabrication &amp; install</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Nationwide distribution &amp; logistics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Custom IT &amp; network solutions</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Dedicated project manager</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Preferred volume pricing</li>
+        </ul>
+        <a href="#contact" class="btn btn-outline btn-block">Talk to Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq section-pad" id="faq">
+  <div class="container">
+    <div class="section-head" data-reveal="fade">
+      <span class="eyebrow">FAQ</span>
+      <h2>Frequently Asked Questions</h2>
+      <p>Everything you need to know before starting your project with us.</p>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item" data-reveal="fade">
+        <button class="faq-q" aria-expanded="false">What areas do you service?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">We're based in Boroko, Port Moresby, NCD, and provide nationwide delivery, distribution and transportation support to clients across Papua New Guinea.</div></div>
+      </div>
+
+      <div class="faq-item" data-reveal="fade" style="transition-delay:.05s">
+        <button class="faq-q" aria-expanded="false">How long does a typical signage project take?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Turnaround depends on project scope, materials and installation requirements. Our streamlined operational workflow is built for fast, dependable delivery — contact us for a project-specific timeline.</div></div>
+      </div>
+
+      <div class="faq-item" data-reveal="fade" style="transition-delay:.1s">
+        <button class="faq-q" aria-expanded="false">Can you handle both small and large-scale orders?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes — from single promotional items and small print runs to large pylon signage structures and bulk corporate merchandise orders.</div></div>
+      </div>
+
+      <div class="faq-item" data-reveal="fade" style="transition-delay:.15s">
+        <button class="faq-q" aria-expanded="false">Do you offer IT and networking support alongside signage/printing?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Our Technical &amp; Fabrication team also provides computer servicing, software consultancy, network installation, technical troubleshooting and system maintenance.</div></div>
+      </div>
+
+      <div class="faq-item" data-reveal="fade" style="transition-delay:.2s">
+        <button class="faq-q" aria-expanded="false">Is 4J Innovation a registered company?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Registered 30 May 2024 with the PNG Investment Promotion Authority (IPA), Certificate No. 110964, Company No. 1-130338550.</div></div>
+      </div>
+
+      <div class="faq-item" data-reveal="fade" style="transition-delay:.25s">
+        <button class="faq-q" aria-expanded="false">How do I request a quote?
+          <span class="chev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M6 9l6 6 6-6"/></svg></span>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Simply contact us by phone, email, or the form below — our team will respond promptly with a customized proposal tailored to your project.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA / CONTACT ============ -->
+<section class="cta section-pad" id="contact">
+  <div class="container">
+    <div class="cta-wrap">
+      <div class="cta-copy" data-reveal="left">
+        <span class="eyebrow" style="background:rgba(255,255,255,.1); color:var(--yellow);">Get In Touch</span>
+        <h2>Ready to Bring Your Project to Life?</h2>
+        <p>Tell us what you need — signage, printing, merchandise, IT support or distribution — and our team will get back to you with a tailored, no-obligation quote.</p>
+
+        <div class="cta-contact-list">
+          <a href="tel:+67572236795">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+            <span>+675 7223 6795<span class="small">Call or WhatsApp us anytime</span></span>
+          </a>
+          <a href="mailto:4jinnovationltd@gmail.com">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg></span>
+            <span>4jinnovationltd@gmail.com<span class="small">We reply within 24 hours</span></span>
+          </a>
+          <div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg></span>
+            <span>Lot 128, Sec 64, Leander Street, Boroko<span class="small">Port Moresby, NCD, Papua New Guinea</span></span>
+          </div>
+          <div>
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg></span>
+            <span>PO Box 143, Gordons Foodworld<span class="small">Postal Address</span></span>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" data-reveal="right" id="quoteForm" novalidate>
+        <h3>Request a Free Quote</h3>
+        <p class="sub">Fill out the form and our team will contact you shortly.</p>
+
+        <div class="form-success" id="formSuccess">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          Thank you! Your request has been received — we'll be in touch soon.
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name</label>
+            <input type="text" id="fname" name="name" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone Number</label>
+            <input type="tel" id="fphone" name="phone" placeholder="+675 7XXX XXXX" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="you@example.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="fservice">Service Needed</label>
+          <select id="fservice" name="service" required>
+            <option value="" disabled selected>Select a service</option>
+            <option>Signage &amp; Fabrication</option>
+            <option>Printing &amp; Branding</option>
+            <option>Retail &amp; Wholesale Merchandise</option>
+            <option>IT &amp; Technical Solutions</option>
+            <option>Transportation &amp; Delivery</option>
+            <option>Other / Custom Project</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fmessage">Project Details</label>
+          <textarea id="fmessage" name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+          Send Request
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </button>
+        <div class="form-note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Your information is safe and will only be used to respond to your enquiry.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="4J Innovation Limited" onerror="this.style.display='none'">
+        <p>Solutions Beyond Expectations. Papua New Guinea's trusted partner for signage, printing, merchandise, IT and distribution solutions.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4V8h4v1.5A5 5 0 0 1 16 8z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+          <a href="https://wa.me/67572236795" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.36 5.13L2 22l5.11-1.44a9.86 9.86 0 0 0 4.93 1.32h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Quick Links</h5>
+        <div class="footer-links">
+          <a href="#about">About Us</a>
+          <a href="#services">Services</a>
+          <a href="#showcase">Our Work</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Our Services</h5>
+        <div class="footer-links">
+          <a href="#services">Signage &amp; Fabrication</a>
+          <a href="#services">Printing &amp; Branding</a>
+          <a href="#services">Retail &amp; Wholesale</a>
+          <a href="#services">IT &amp; Technical Solutions</a>
+          <a href="#services">Transportation &amp; Delivery</a>
+        </div>
+      </div>
+
+      <div>
+        <h5>Contact Info</h5>
+        <ul class="footer-contact">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg> +675 7223 6795</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 6-10 7L2 6"/></svg> 4jinnovationltd@gmail.com</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 9h18"/></svg> PO Box 143, Gordons Foodworld</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/></svg> Lot 128 Sec 64 Leander Street, Boroko, Port Moresby, NCD</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> 4J Innovation Limited. All rights reserved.</span>
+      <span class="reg">IPA Cert. No. 110964 · Company No. 1-130338550 · Registered 30 May 2024</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING ACTIONS ============ -->
+<div class="floating-actions">
+  <a href="https://wa.me/67572236795" class="fab whatsapp" aria-label="Chat with us on WhatsApp" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.5 3.62 1.36 5.13L2 22l5.11-1.44a9.86 9.86 0 0 0 4.93 1.32h.01c5.46 0 9.9-4.45 9.9-9.91C21.95 6.45 17.5 2 12.04 2z"/></svg>
+  </a>
+  <button class="fab top" id="toTop" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+</div>
+
+<!-- ============ LIGHTBOX ============ -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <div class="lightbox-inner">
+    <img id="lightboxImg" src="" alt="">
+    <h4 id="lightboxTitle"></h4>
+    <p id="lightboxDesc"></p>
+  </div>
+</div>
+
+<script>
+/* ============ YEAR ============ */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ============ NAVBAR SCROLL ============ */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 40);
+  document.getElementById('toTop').classList.toggle('show', window.scrollY > 600);
+}, { passive:true });
+
+/* ============ MOBILE MENU ============ */
+const burger = document.getElementById('burger');
+const mobileMenu = document.getElementById('mobileMenu');
+burger.addEventListener('click', () => {
+  const active = burger.classList.toggle('active');
+  mobileMenu.classList.toggle('active');
+  burger.setAttribute('aria-expanded', active);
+  document.body.style.overflow = active ? 'hidden' : '';
+});
+mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  burger.classList.remove('active'); mobileMenu.classList.remove('active');
+  burger.setAttribute('aria-expanded','false'); document.body.style.overflow = '';
+}));
+
+/* ============ SCROLL REVEAL ============ */
+const revealEls = document.querySelectorAll('[data-reveal]');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold:.15, rootMargin:'0px 0px -60px 0px' });
+revealEls.forEach(el => io.observe(el));
+
+/* ============ COUNTER ANIMATION ============ */
+const counters = document.querySelectorAll('[data-count]');
+const counterIO = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.getAttribute('data-count'), 10);
+      let current = 0;
+      const duration = 1400;
+      const start = performance.now();
+      function tick(now){
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        current = Math.floor(eased * target);
+        el.textContent = current;
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target;
+      }
+      requestAnimationFrame(tick);
+      counterIO.unobserve(el);
+    }
+  });
+}, { threshold:.5 });
+counters.forEach(c => counterIO.observe(c));
+
+/* ============ FAQ ACCORDION ============ */
+document.querySelectorAll('.faq-item').forEach(item => {
+  const btn = item.querySelector('.faq-q');
+  const answer = item.querySelector('.faq-a');
+  btn.addEventListener('click', () => {
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i => {
+      i.classList.remove('active');
+      i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      i.querySelector('.faq-a').style.maxHeight = null;
+    });
+    if (!isActive) {
+      item.classList.add('active');
+      btn.setAttribute('aria-expanded','true');
+      answer.style.maxHeight = answer.scrollHeight + 'px';
+    }
+  });
+});
+
+/* ============ TESTIMONIAL DOTS (mobile) ============ */
+const tTrack = document.getElementById('tTrack');
+const tDots = document.getElementById('tDots');
+const tCards = tTrack.querySelectorAll('.t-card');
+tCards.forEach((_, i) => {
+  const dot = document.createElement('button');
+  if (i === 0) dot.classList.add('active');
+  dot.setAttribute('aria-label', 'Go to testimonial ' + (i+1));
+  dot.addEventListener('click', () => {
+    tCards[i].scrollIntoView({ behavior:'smooth', inline:'center', block:'nearest' });
+  });
+  tDots.appendChild(dot);
+});
+tTrack.addEventListener('scroll', () => {
+  let closest = 0, minDist = Infinity;
+  tCards.forEach((card, i) => {
+    const dist = Math.abs(card.getBoundingClientRect().left - tTrack.getBoundingClientRect().left);
+    if (dist < minDist) { minDist = dist; closest = i; }
+  });
+  tDots.querySelectorAll('button').forEach((d,i) => d.classList.toggle('active', i === closest));
+}, { passive:true });
+
+/* ============ GALLERY FILTER ============ */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const galleryItems = document.querySelectorAll('#galleryGrid .gallery-item');
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    galleryItems.forEach(item => {
+      const match = filter === 'all' || item.getAttribute('data-category') === filter;
+      item.classList.toggle('hide', !match);
+    });
+  });
+});
+
+/* ============ LIGHTBOX ============ */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxTitle = document.getElementById('lightboxTitle');
+const lightboxDesc = document.getElementById('lightboxDesc');
+document.querySelectorAll('[data-lightbox]').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    lightboxImg.src = img ? img.src : '';
+    lightboxImg.alt = img ? img.alt : '';
+    lightboxTitle.textContent = item.getAttribute('data-title') || '';
+    lightboxDesc.textContent = item.getAttribute('data-desc') || '';
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+function closeLightbox(){
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+
+/* ============ BACK TO TOP ============ */
+document.getElementById('toTop').addEventListener('click', () => {
+  window.scrollTo({ top:0, behavior:'smooth' });
+});
+
+/* ============ CONTACT FORM ============ */
+const quoteForm = document.getElementById('quoteForm');
+const formSuccess = document.getElementById('formSuccess');
+quoteForm.addEventListener('submit', function(e){
+  e.preventDefault();
+  if (!quoteForm.checkValidity()) { quoteForm.reportValidity(); return; }
+  // TODO: connect to backend / Formspree / email API endpoint here
+  formSuccess.classList.add('show');
+  quoteForm.reset();
+  formSuccess.scrollIntoView({ behavior:'smooth', block:'center' });
+  setTimeout(() => formSuccess.classList.remove('show'), 6000);
+});
+</script>
 </body>
 </html>
+
+
