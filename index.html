@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="4J Innovations Limited - Leading technology solutions provider in Papua New Guinea. Innovative digital transformation, AI, and enterprise software for PNG businesses.">
+    <meta name="keywords" content="4J Innovations, Papua New Guinea, technology solutions, digital transformation, AI, enterprise software, PNG tech company">
+    <title>4J Innovations Limited | Premium Technology Solutions for Papua New Guinea</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel="apple-touch-icon" href="assets/icons/favicon.svg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: #0A2540;
+            --accent: #00D4FF;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .font-display {
+            font-family: 'Space Grotesk', 'Inter', system_ui, sans-serif;
+            font-weight: 600;
+            letter-spacing: -0.025em;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .glass-dark {
+            background: rgba(10, 37, 64, 0.75);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .premium-gradient {
+            background: linear-gradient(135deg, #0A2540 0%, #1E3A5F 100%);
+        }
+
+        .accent-gradient {
+            background: linear-gradient(90deg, #00D4FF, #00A3CC);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header {
+            font-size: clamp(2.25rem, 5vw, 3.5rem);
+            line-height: 1.05;
+            font-weight: 700;
+            letter-spacing: -0.04em;
+        }
+
+        .nav-scrolled {
+            background: rgba(10, 37, 64, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        .premium-shadow {
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25), 0 10px 10px -6px rgb(0 0 0 / 0.15);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .stagger-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.1);
+        }
+
+        .nav-link {
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .nav-link:hover {
+            color: #00D4FF;
+            transform: translateY(-1px);
+        }
+
+        .premium-btn {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .premium-btn::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -100%;
+            width: 50%;
+            height: 200%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transition: 0.6s;
+        }
+        
+        .premium-btn:hover::after {
+            left: 250%;
+        }
+
+        .stat-number {
+            font-variant-numeric: tabular-nums;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        
+        .scroll-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .micro-hover {
+            transition: transform 0.2s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                       box-shadow 0.2s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .micro-hover:hover {
+            transform: scale(1.03);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        .ambient-bg {
+            background: radial-gradient(circle at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+        }
+
+        .tech-grid {
+            background-image: url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill-rule=%22evenodd%22%3E%3Cpath fill=%22%2300D4FF%22 fill-opacity=%22004%22 d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-10V8h-2v16h-4v2h4v4h2v-4h4v-2h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 6v-4H4v4H0v2h4v4h2V8h4V6H6z%22/%3E%3C/g%3E%3C/svg%27');
+            background-size: 60px 60px;
+        }
+
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        .modern-testimonial {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .faq-question {
+            transition: all 0.3s ease;
+        }
+
+        .nav-active {
+            color: #00D4FF;
+            position: relative;
+        }
+        
+        .nav-active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(to right, #00D4FF, #00A3CC);
+        }
+
+        .hero-grid {
+            background-image: url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2296%22 height=%2296%22 fill=%22none%22%3E%3Cpath fill-rule=%22evenodd%22 clip-rule=%22evenodd%22 d=%22M96 0H0v96h96V0zM48 16v16H32v-2h14V16h2zm16 16v16H48v-2h14V32h2zM32 48v16H16v-2h14V48h2zm16 16v16H32v-2h14v-14h2z%22 fill=%22%2300D4FF%22 fill-opacity=%22006%22/%3E%3C/svg%27');
+            background-size: 96px 96px;
+        }
+    </style>
+</head>
+<body class="bg-[#0A2540] text-white overflow-x-hidden">
+    <!-- Sticky Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-[#0A2540]/95 backdrop-blur-xl border-b border-white/10">
+        <div class="max-w-screen-2xl mx-auto">
+            <div class="px-8 py-5 flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-x-3">
+                    <div class="w-11 h-11 bg-white rounded-2xl flex items-center justify-center shadow-inner">
+                        <img src="assets/icons/logo.svg" alt="4J Innovations Limited" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <div class="font-display text-2xl font-semibold tracking-tighter">4J Innovations</div>
+                        <div class="text-[10px] text-white/50 -mt-1 tracking-[1.5px]">LIMITED</div>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center gap-x-9 text-sm font-medium">
+                    <a href="#features" class="nav-link text-white/90 hover:text-white px-1">Solutions</a>
+                    <a href="#showcase" class="nav-link text-white/90 hover:text-white px-1">Platform</a>
+                    <a href="#benefits" class="nav-link text-white/90 hover:text-white px-1">Why Us</a>
+                    <a href="#testimonials" class="nav-link text-white/90 hover:text-white px-1">Stories</a>
+                    <a href="#pricing" class="nav-link text-white/90 hover:text-white px-1">Pricing</a>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="flex items-center gap-x-3">
+                    <a href="#contact" 
+                       class="hidden md:block px-5 py-2.5 text-sm font-medium text-white/90 hover:text-white transition-colors">
+                        Contact Sales
+                    </a>
+                    <a href="#contact" 
+                       class="premium-btn px-6 py-2.5 text-sm font-semibold bg-white text-[#0A2540] rounded-3xl hover:bg-white/95 flex items-center gap-x-2 shadow-xl hover:shadow-2xl">
+                        <span>Get Started</span>
+                        <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                    
+                    <!-- Mobile Menu -->
+                    <button id="mobile-menu-btn" 
+                            class="md:hidden w-10 h-10 flex items-center justify-center text-white/90 hover:text-white">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-20 pb-16 md:pt-24 md:pb-20 relative premium-gradient overflow-hidden">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="grid md:grid-cols-12 gap-12 items-center pt-8 md:pt-10">
+                <!-- Hero Content -->
+                <div class="md:col-span-7 max-w-2xl">
+                    <div class="inline-flex items-center gap-x-2 bg-white/10 px-4 h-9 rounded-3xl text-xs tracking-[1px] font-medium mb-6 border border-white/10">
+                        <div class="w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse"></div>
+                        <span>PAPUA NEW GUINEA'S LEADING TECH INNOVATOR</span>
+                    </div>
+                    
+                    <h1 class="font-display text-6xl md:text-7xl leading-[1.02] font-semibold tracking-tighter mb-6">
+                        Technology that<br>
+                        <span class="accent-gradient">transforms PNG.</span>
+                    </h1>
+                    
+                    <p class="max-w-lg text-xl text-white/80 leading-relaxed mb-9">
+                        Empowering Papua New Guinea's businesses, government, and communities 
+                        with world-class digital solutions tailored for local impact.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" 
+                           class="premium-btn flex-1 sm:flex-none justify-center px-8 py-4 bg-[#00D4FF] hover:bg-[#00C4EE] text-[#0A2540] font-semibold text-base rounded-3xl flex items-center gap-x-3 shadow-xl hover:shadow-2xl">
+                            <span>Book a Demo</span>
+                            <i class="fas fa-play text-sm"></i>
+                        </a>
+                        <a href="#showcase" 
+                           class="premium-btn flex-1 sm:flex-none justify-center px-8 py-4 border border-white/30 hover:bg-white/5 text-white font-medium text-base rounded-3xl flex items-center gap-x-3 transition-all">
+                            <span>Explore Platform</span>
+                        </a>
+                    </div>
+                    
+                    <div class="mt-8 flex items-center gap-x-6 text-sm">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1005/32/32" class="w-full h-full object-cover"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1011/32/32" class="w-full h-full object-cover"></div>
+                            <div class="w-8 h-8 rounded-full border-2 border-[#0A2540] overflow-hidden"><img src="https://picsum.photos/id/1009/32/32" class="w-full h-full object-cover"></div>
+                        </div>
+                        <div class="text-white/70 text-sm">
+                            Trusted by <span class="font-semibold text-white">150+</span> PNG organizations
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Visual -->
+                <div class="md:col-span-5 relative">
+                    <div class="relative mx-auto max-w-[420px]">
+                        <div class="glass rounded-3xl p-2 shadow-2xl premium-shadow border border-white/10">
+                            <img src="https://picsum.photos/id/1015/720/640" alt="4J Innovations - Modern technology solutions for Papua New Guinea" 
+                                 class="rounded-3xl shadow-inner w-full aspect-[4/3.5] object-cover">
+                        </div>
+                        
+                        <!-- Floating badge -->
+                        <div class="absolute -bottom-4 -right-4 glass px-5 py-3 rounded-3xl flex items-center gap-x-3 border border-white/10 shadow-xl">
+                            <div>
+                                <div class="text-xs text-white/70">Featured in</div>
+                                <div class="font-semibold">PNG Tech Awards 2025</div>
+                            </div>
+                            <div class="w-9 h-9 flex-shrink-0 bg-[#00D4FF] rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-trophy text-[#0A2540]"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+    </section>
+
+    <!-- Social Proof / Trust Bar -->
+    <div class="border-b border-white/10 bg-[#0A2540]">
+        <div class="max-w-screen-2xl mx-auto px-6 py-7 md:py-8">
+            <div class="flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-75">
+                <div class="flex items-center gap-x-3 text-sm font-medium">
+                    <span class="font-semibold">PNG Government</span>
+                </div>
+                <div class="flex items-center gap-x-3 text-sm font-medium">
+                    <span class="font-semibold">Bank of PNG</span>
+                </div>
+                <div class="flex items-center gap-x-3 text-sm font-medium">
+                    <span class="font-semibold">Ok Tedi Mining</span>
+                </div>
+                <div class="flex items-center gap-x-3 text-sm font-medium">
+                    <span class="font-semibold">Telikom PNG</span>
+                </div>
+                <div class="flex items-center gap-x-3 text-sm font-medium">
+                    <span class="font-semibold">National Superannuation</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section id="features" class="max-w-screen-2xl mx-auto px-6 md:px-12 pt-20 pb-16">
+        <div class="max-w-3xl mx-auto text-center mb-14">
+            <div class="inline text-xs px-3 py-1 rounded-full bg-white/5 text-white/60 tracking-[1.5px]">SOLUTIONS</div>
+            <h2 class="font-display section-header mt-3">Purpose-built for PNG</h2>
+            <p class="text-xl text-white/70 mt-4">Enterprise-grade technology solutions designed specifically for Papua New Guinea's unique challenges and opportunities.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Feature 1 -->
+            <div class="feature-card glass p-8 rounded-3xl group">
+                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-globe fa-2x"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight mb-3">Digital Transformation</h3>
+                <p class="text-white/70 leading-relaxed">Modernize legacy systems and drive digital adoption across government, banking, mining, and SMEs with our proven frameworks.</p>
+                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
+                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
+                </div>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="feature-card glass p-8 rounded-3xl group">
+                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-brain fa-2x"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight mb-3">AI &amp; Intelligent Systems</h3>
+                <p class="text-white/70 leading-relaxed">Deploy locally-trained AI models for predictive analytics, document processing, fraud detection and automated decision making.</p>
+                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
+                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
+                </div>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="feature-card glass p-8 rounded-3xl group">
+                <div class="w-14 h-14 flex items-center justify-center bg-[#00D4FF]/10 text-[#00D4FF] rounded-2xl mb-7 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-mobile-alt fa-2x"></i>
+                </div>
+                <h3 class="font-semibold text-2xl tracking-tight mb-3">Mobile-First Solutions</h3>
+                <p class="text-white/70 leading-relaxed">Build and deploy high-performance mobile apps and platforms optimized for low-bandwidth environments common across PNG.</p>
+                <div class="mt-auto pt-6 flex items-center gap-x-2 text-sm font-medium text-[#00D4FF]">
+                    <span>Learn more</span> <i class="fas fa-arrow-right text-xs transition group-hover:translate-x-1"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Showcase -->
+    <section id="showcase" class="bg-[#081F36] py-20">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="grid md:grid-cols-12 gap-y-16 gap-x-10 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-24">
+                        <div class="text-xs tracking-widest text-[#00D4FF] mb-2 font-medium">THE 4J PLATFORM</div>
+                        <h2 class="font-display text-5xl leading-none tracking-tighter mb-5">One platform.<br>Endless impact.</h2>
+                        <p class="text-white/70 text-xl">Our flagship suite of enterprise software is built to scale across PNG's most demanding industries.</p>
+                        
+                        <div class="mt-10">
+                            <a href="#contact" class="inline-flex px-7 py-3.5 text-sm font-semibold items-center gap-x-3 bg-white/10 hover:bg-white/15 border border-white/10 rounded-3xl transition-all">
+                                <span>Request Platform Demo</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="glass-dark p-7 rounded-3xl micro-hover">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="font-semibold">4J Connect</div>
+                                    <div class="text-xs text-white/60">Enterprise Connectivity</div>
+                                </div>
+                                <i class="fas fa-network-wired text-xl text-[#00D4FF]"></i>
+                            </div>
+                            <div class="mt-9 text-sm text-white/80">Seamless integration for banking, telco and mining operations across PNG.</div>
+                        </div>
+                        
+                        <div class="glass-dark p-7 rounded-3xl micro-hover">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="font-semibold">4J Insight</div>
+                                    <div class="text-xs text-white/60">Business Intelligence</div>
+                                </div>
+                                <i class="fas fa-chart-line text-xl text-[#00D4FF]"></i>
+                            </div>
+                            <div class="mt-9 text-sm text-white/80">Real-time dashboards and predictive analytics for PNG decision makers.</div>
+                        </div>
+                        
+                        <div class="glass-dark p-7 rounded-3xl micro-hover">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="font-semibold">4J Secure</div>
+                                    <div class="text-xs text-white/60">Cybersecurity</div>
+                                </div>
+                                <i class="fas fa-shield-alt text-xl text-[#00D4FF]"></i>
+                            </div>
+                            <div class="mt-9 text-sm text-white/80">Locally hosted security solutions compliant with PNG data regulations.</div>
+                        </div>
+                        
+                        <div class="glass-dark p-7 rounded-3xl micro-hover">
+                            <div class="flex justify-between">
+                                <div>
+                                    <div class="font-semibold">4J Engage</div>
+                                    <div class="text-xs text-white/60">Citizen Services</div>
+                                </div>
+                                <i class="fas fa-users text-xl text-[#00D4FF]"></i>
+                            </div>
+                            <div class="mt-9 text-sm text-white/80">Digital government services and citizen engagement platforms.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section id="benefits" class="max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
+        <div class="text-center mb-14">
+            <div class="text-xs tracking-[2px] text-[#00D4FF]">THE 4J DIFFERENCE</div>
+            <h2 class="font-display text-5xl tracking-tighter mt-3">Built for real-world PNG challenges</h2>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="glass p-8 rounded-3xl">
+                <i class="fas fa-globe-asia-australia text-3xl text-[#00D4FF] mb-6"></i>
+                <div class="font-semibold text-xl">Local Expertise</div>
+                <div class="text-sm text-white/70 mt-3 leading-relaxed">Deep understanding of PNG's cultural, infrastructural, and regulatory landscape.</div>
+            </div>
+            <div class="glass p-8 rounded-3xl">
+                <i class="fas fa-server text-3xl text-[#00D4FF] mb-6"></i>
+                <div class="font-semibold text-xl">On-Premise &amp; Cloud</div>
+                <div class="text-sm text-white/70 mt-3 leading-relaxed">Flexible deployment options including fully on-premise infrastructure in Port Moresby.</div>
+            </div>
+            <div class="glass p-8 rounded-3xl">
+                <i class="fas fa-handshake text-3xl text-[#00D4FF] mb-6"></i>
+                <div class="font-semibold text-xl">Local Support</div>
+                <div class="text-sm text-white/70 mt-3 leading-relaxed">24/7 support from our team based in Port Moresby, Lae, and Mt. Hagen.</div>
+            </div>
+            <div class="glass p-8 rounded-3xl">
+                <i class="fas fa-leaf text-3xl text-[#00D4FF] mb-6"></i>
+                <div class="font-semibold text-xl">Sustainable Impact</div>
+                <div class="text-sm text-white/70 mt-3 leading-relaxed">Solutions designed to deliver measurable economic and social benefits for PNG.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="bg-[#081F36] py-20">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
+                <div>
+                    <div class="text-xs font-medium tracking-[2px] text-[#00D4FF]">REAL STORIES</div>
+                    <h2 class="font-display text-5xl tracking-tighter">Leaders across PNG trust us</h2>
+                </div>
+                <a href="#contact" class="text-sm mt-4 md:mt-0 font-medium flex items-center gap-x-2 text-[#00D4FF]">View all customer stories <i class="fas fa-arrow-right"></i></a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="modern-testimonial glass p-8 rounded-3xl">
+                    <div class="flex mb-6">
+                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
+                    </div>
+                    <div class="text-white/90 leading-relaxed">"4J Innovations transformed how we deliver citizen services. Their platform is now used by over 200,000 Papua New Guineans."</div>
+                    <div class="mt-7 flex items-center gap-x-4">
+                        <div><img src="https://picsum.photos/id/1009/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
+                        <div>
+                            <div class="font-semibold">Dr. Miriam Kila</div>
+                            <div class="text-xs text-white/60">Secretary, Department of ICT, PNG</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-testimonial glass p-8 rounded-3xl">
+                    <div class="flex mb-6">
+                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
+                    </div>
+                    <div class="text-white/90 leading-relaxed">"Their AI-powered fraud detection system has saved us millions of Kina in the first year alone. Truly world-class."</div>
+                    <div class="mt-7 flex items-center gap-x-4">
+                        <div><img src="https://picsum.photos/id/1012/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
+                        <div>
+                            <div class="font-semibold">James Numa</div>
+                            <div class="text-xs text-white/60">CTO, Bank of Papua New Guinea</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modern-testimonial glass p-8 rounded-3xl">
+                    <div class="flex mb-6">
+                        <div class="text-[#00D4FF]"><i class="fas fa-quote-left text-3xl"></i></div>
+                    </div>
+                    <div class="text-white/90 leading-relaxed">"The most reliable technology partner we have worked with in PNG. Their local presence and responsiveness are unmatched."</div>
+                    <div class="mt-7 flex items-center gap-x-4">
+                        <div><img src="https://picsum.photos/id/1006/44/44" class="rounded-full ring-2 ring-white/10 w-11 h-11" alt=""></div>
+                        <div>
+                            <div class="font-semibold">Sarah Kaupa</div>
+                            <div class="text-xs text-white/60">Head of Digital, Ok Tedi Mining</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="max-w-screen-2xl mx-auto px-6 md:px-12 py-20">
+        <div class="text-center mb-14">
+            <div class="text-xs font-medium tracking-widest text-[#00D4FF]">PRICING</div>
+            <h2 class="font-display text-5xl tracking-tighter mt-2">Flexible plans for every PNG organization</h2>
+        </div>
+        
+        <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-6">
+            <!-- Pricing Tier 1 -->
+            <div class="glass rounded-3xl p-8 flex flex-col">
+                <div>
+                    <div class="font-semibold">Starter</div>
+                    <div class="mt-1 text-4xl font-semibold">K4,200</div>
+                    <div class="text-sm text-white/60">per month</div>
+                </div>
+                <div class="my-6 flex-1">
+                    <ul class="space-y-[13px] text-sm">
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Up to 50 users</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Core platform features</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Basic analytics</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Email support</span></li>
+                    </ul>
+                </div>
+                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl border border-white/30 text-sm font-semibold hover:bg-white/5">Get started</a>
+            </div>
+            
+            <!-- Pricing Tier 2 -->
+            <div class="glass rounded-3xl p-8 flex flex-col border border-[#00D4FF]/60 relative">
+                <div class="absolute -top-3 right-6 bg-[#00D4FF] text-[#0A2540] text-xs font-bold px-4 h-6 flex items-center justify-center rounded-3xl">MOST POPULAR</div>
+                
+                <div>
+                    <div class="font-semibold">Growth</div>
+                    <div class="mt-1 text-4xl font-semibold">K12,900</div>
+                    <div class="text-sm text-white/60">per month</div>
+                </div>
+                <div class="my-6 flex-1">
+                    <ul class="space-y-[13px] text-sm">
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Unlimited users</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Full platform access</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>AI + advanced analytics</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Priority local support</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Custom integrations</span></li>
+                    </ul>
+                </div>
+                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl bg-[#00D4FF] text-[#0A2540] text-sm font-semibold">Start 30-day trial</a>
+            </div>
+            
+            <div class="glass rounded-3xl p-8 flex flex-col">
+                <div>
+                    <div class="font-semibold">Enterprise</div>
+                    <div class="mt-1 text-4xl font-semibold">Custom</div>
+                    <div class="text-sm text-white/60">tailored pricing</div>
+                </div>
+                <div class="my-6 flex-1">
+                    <ul class="space-y-[13px] text-sm">
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Unlimited everything</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>On-premise deployment</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>White-label solutions</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>Dedicated PNG team</span></li>
+                        <li class="flex gap-x-3"><i class="fas fa-check text-[#00D4FF] mt-1"></i> <span>SLA &amp; compliance support</span></li>
+                    </ul>
+                </div>
+                <a href="#contact" class="premium-btn mt-auto block text-center py-3.5 rounded-3xl border border-white/30 text-sm font-semibold hover:bg-white/5">Talk to sales</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-screen-2xl mx-auto px-6 md:px-12 py-16">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-9">
+                <div class="text-xs tracking-[2px] text-[#00D4FF]">QUESTIONS?</div>
+                <h2 class="font-display text-4xl tracking-tighter">Frequently asked questions</h2>
+            </div>
+            
+            <div class="space-y-3">
+                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
+                    <div class="flex items-center justify-between font-medium">
+                        <span>Is 4J Innovations locally owned and operated?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="hidden pt-3 text-sm text-white/80">Yes. 4J Innovations Limited is 100% Papua New Guinea owned and operated, with headquarters in Port Moresby and offices across the country.</div>
+                </div>
+                
+                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
+                    <div class="flex items-center justify-between font-medium">
+                        <span>Do you support offline and low-bandwidth environments?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="hidden pt-3 text-sm text-white/80">Absolutely. Our solutions are optimized for PNG's connectivity realities and include robust offline-first capabilities.</div>
+                </div>
+                
+                <div class="glass px-7 py-5 rounded-3xl faq-question cursor-pointer" onclick="toggleFAQ(this)">
+                    <div class="flex items-center justify-between font-medium">
+                        <span>How long does implementation typically take?</span>
+                        <i class="fas fa-chevron-down transition-transform"></i>
+                    </div>
+                    <div class="hidden pt-3 text-sm text-white/80">Our standard implementations take 6-12 weeks. Enterprise and custom deployments are scoped individually.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact" class="premium-gradient py-20 border-t border-white/10">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 text-center">
+            <div class="max-w-xl mx-auto">
+                <h2 class="font-display text-5xl tracking-tighter">Ready to transform your organization?</h2>
+                <p class="mt-4 text-xl text-white/70">Join the leading institutions driving PNG's digital future with 4J Innovations.</p>
+                
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#" onclick="showContactModal()" 
+                       class="premium-btn px-9 py-4 text-lg font-semibold bg-white text-[#0A2540] rounded-3xl flex items-center justify-center gap-x-3 w-full sm:w-auto">
+                        <span>Schedule a consultation</span>
+                    </a>
+                    <a href="mailto:hello@4jinnovations.com.pg" class="px-9 py-4 text-lg font-medium border border-white/40 hover:bg-white/5 rounded-3xl transition-all flex items-center justify-center w-full sm:w-auto">
+                        Email our team
+                    </a>
+                </div>
+                
+                <div class="mt-7 text-xs text-white/50">Port Moresby • Lae • Mt. Hagen • Australia</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-[#081F36]">
+        <div class="max-w-screen-2xl mx-auto px-6 md:px-12 pt-12 pb-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-y-8">
+                <div>
+                    <div class="flex items-center gap-x-3">
+                        <div class="w-9 h-9 bg-white rounded-2xl flex items-center justify-center">
+                            <img src="assets/icons/logo.svg" alt="4J Innovations" class="w-6 h-6">
+                        </div>
+                        <div class="font-display font-semibold text-xl">4J Innovations Limited</div>
+                    </div>
+                    <div class="text-xs text-white/50 mt-2">© 2026 All Rights Reserved. Papua New Guinea.</div>
+                </div>
+                
+                <div class="flex flex-wrap gap-x-7 gap-y-1 text-sm text-white/70">
+                    <a href="#" class="hover:text-white">Privacy</a>
+                    <a href="#" class="hover:text-white">Terms</a>
+                    <a href="#" class="hover:text-white">Security</a>
+                    <a href="#" class="hover:text-white">Careers</a>
+                    <a href="#" class="hover:text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Modal -->
+    <div id="contact-modal" onclick="hideContactModal()" class="hidden fixed inset-0 bg-black/70 backdrop-blur-md z-[70] flex items-center justify-center p-6">
+        <div onclick="event.stopImmediatePropagation()" class="glass-dark max-w-md w-full rounded-3xl p-8">
+            <div class="flex justify-between items-start">
+                <div>
+                    <div class="font-display text-3xl tracking-tighter">Let's get started</div>
+                    <div class="text-white/60 text-sm mt-1">Our team will reach out within 24 hours</div>
+                </div>
+                <button onclick="hideContactModal()" class="text-xl text-white/60 hover:text-white">×</button>
+            </div>
+            
+            <form class="mt-8 space-y-4" onsubmit="submitForm(event)">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-xs tracking-wider mb-1.5 text-white/60">FIRST NAME</label>
+                        <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="John" required>
+                    </div>
+                    <div>
+                        <label class="block text-xs tracking-wider mb-1.5 text-white/60">LAST NAME</label>
+                        <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="Kaupa" required>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs tracking-wider mb-1.5 text-white/60">ORGANIZATION</label>
+                    <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="Your company / department" required>
+                </div>
+                <div>
+                    <label class="block text-xs tracking-wider mb-1.5 text-white/60">EMAIL ADDRESS</label>
+                    <input type="email" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-2xl text-sm focus:outline-none focus:border-[#00D4FF]" placeholder="you@organization.pg" required>
+                </div>
+                
+                <button type="submit" class="premium-btn mt-4 w-full py-4 bg-[#00D4FF] hover:bg-[#00C4EE] text-[#0A2540] font-semibold rounded-3xl">Submit request</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind script
+        function initializeTailwind() {
+            document.documentElement.style.setProperty('--accent', '#00D4FF');
+        }
+        
+        // Navbar scroll effect
+        function initNavbar() {
+            const navbar = document.getElementById('navbar');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                }
+            });
+            
+            // Mobile menu
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            if (mobileBtn) {
+                mobileBtn.addEventListener('click', () => {
+                    const navLinks = document.createElement('div');
+                    navLinks.className = `fixed inset-0 bg-[#0A2540] z-[60] flex flex-col p-8 pt-20`;
+                    navLinks.innerHTML = `
+                        <div class="flex flex-col text-xl gap-y-6 font-medium">
+                            <a href="#features" class="py-2">Solutions</a>
+                            <a href="#showcase" class="py-2">Platform</a>
+                            <a href="#benefits" class="py-2">Why Us</a>
+                            <a href="#testimonials" class="py-2">Stories</a>
+                            <a href="#pricing" class="py-2">Pricing</a>
+                            <div class="pt-4">
+                                <a href="#contact" class="premium-btn block px-8 py-4 text-center bg-white text-[#0A2540] rounded-3xl font-semibold">Get Started</a>
+                            </div>
+                        </div>
+                    `;
+                    document.body.appendChild(navLinks);
+                    
+                    navLinks.addEventListener('click', (e) => {
+                        if (e.target.tagName === 'A') {
+                            navLinks.remove();
+                        }
+                    });
+                });
+            }
+        }
+        
+        // Scroll reveal animations
+        function initScrollReveal() {
+            const reveals = document.querySelectorAll('.scroll-reveal, .stagger-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        
+                        // Stagger children if parent has stagger-items
+                        if (entry.target.classList.contains('stagger-item')) {
+                            const children = entry.target.parentElement.querySelectorAll('.stagger-item');
+                            children.forEach((child, index) => {
+                                setTimeout(() => {
+                                    child.classList.add('visible');
+                                }, index * 90);
+                            });
+                        }
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            
+            reveals.forEach(el => observer.observe(el));
+            
+            // Auto apply stagger to feature cards
+            const featureCards = document.querySelectorAll('#features .feature-card');
+            featureCards.forEach((card, i) => {
+                card.style.transitionDelay = `${i * 80}ms`;
+                card.classList.add('stagger-item');
+                observer.observe(card);
+            });
+        }
+        
+        // FAQ Toggle
+        function toggleFAQ(element) {
+            const answer = element.querySelector('div:last-child');
+            const icon = element.querySelector('i');
+            
+            if (answer.classList.contains('hidden')) {
+                answer.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                answer.classList.add('hidden');
+                icon.style.transform = '';
+            }
+        }
+        
+        // Contact Modal
+        function showContactModal() {
+            document.getElementById('contact-modal').classList.remove('hidden');
+            document.getElementById('contact-modal').classList.add('flex');
+        }
+        
+        function hideContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.classList.remove('flex');
+            modal.classList.add('hidden');
+        }
+        
+        function submitForm(e) {
+            e.preventDefault();
+            const modal = document.getElementById('contact-modal');
+            
+            modal.innerHTML = `
+                <div onclick="event.stopImmediatePropagation()" class="glass-dark max-w-md w-full rounded-3xl p-8 text-center">
+                    <div class="mx-auto w-16 h-16 flex items-center justify-center bg-[#00D4FF]/10 rounded-full">
+                        <i class="fas fa-check text-[#00D4FF] text-3xl"></i>
+                    </div>
+                    <div class="font-display text-3xl mt-6 tracking-tight">Thank you!</div>
+                    <div class="text-white/70 mt-3">We've received your request.<br>Our PNG team will contact you shortly.</div>
+                    
+                    <button onclick="location.reload()" class="mt-8 w-full py-3.5 text-sm bg-white/10 rounded-3xl font-medium">Back to homepage</button>
+                </div>
+            `;
+        }
+        
+        // Micro interactions
+        function initMicroInteractions() {
+            // Add hover states for premium buttons
+            const buttons = document.querySelectorAll('.premium-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', () => {
+                    btn.style.transform = 'translateY(-1px)';
+                });
+                btn.addEventListener('mouseleave', () => {
+                    btn.style.transform = '';
+                });
+            });
+            
+            // Smooth scroll for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Ambient background subtle animation on hero
+            const hero = document.querySelector('.premium-gradient');
+            if (hero) {
+                setInterval(() => {
+                    hero.style.transitionDuration = '1800ms';
+                    hero.style.backgroundPosition = Math.random() > 0.5 ? '30% 50%' : '70% 50%';
+                }, 4500);
+            }
+        }
+        
+        // Initialize everything
+        function initialize() {
+            initializeTailwind();
+            initNavbar();
+            initScrollReveal();
+            initMicroInteractions();
+            
+            // Add initial scroll reveal classes to key sections
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.classList.add('scroll-reveal');
+            });
+            
+            // Easter egg: logo click
+            const logo = document.querySelector('nav .flex.items-center');
+            if (logo) {
+                logo.addEventListener('click', () => {
+                    logo.style.transitionDuration = '150ms';
+                    logo.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        logo.style.transform = 'scale(1)';
+                    }, 180);
+                });
+            }
+            
+            // Keyboard accessibility
+            document.addEventListener('keydown', (e) => {
+                if (e.key === "Escape") {
+                    const modal = document.getElementById('contact-modal');
+                    if (!modal.classList.contains('hidden')) {
+                        hideContactModal();
+                    }
+                }
+            });
+            
+            console.log('%c[4J Innovations] Premium PNG landing page initialized successfully.', 'color:#64748b');
+        }
+        
+        // Boot application
+        window.onload = initialize;
+    </script>
+</body>
+</html>
