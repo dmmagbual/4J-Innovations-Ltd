@@ -1,35 +1,54 @@
-# 4J Innovation Limited — Image Rename Map
+# 4J Innovation Limited — Image Map (compressed WebP)
 
-This site expects the following images. Use this map to rename your photos,
-then place each one in the folder shown. File names must match **exactly**
-(lowercase, hyphens).
+All photos were compressed from the original JPEG uploads
+(`assets/image/` on the `main` branch, ~2.97 MB) to WebP
+(`assets/images/`, ~1.39 MB total — 54% smaller, max 1200px, q72).
 
-## Where to put the site logo (already in place)
+Original un-compressed files are preserved in git history on
+`origin/main` (`assets/image/`) if ever needed.
+
+## Site logo (already in place)
 - `assets/logo.jpg` — brand logo (navbar + footer + Open Graph)
 - `assets/favicon.jpg` — browser tab icon
 
-## Project photos → `assets/images/`
+## Project photos — used by the website
 
-| Folder | Filename (exact) | What the photo should show | Used on |
-|---|---|---|---|
-| `assets/images/pih/` | `pih-wayfinding.jpg` | PIH Medical Centre directional wayfinding sign mounted on a pole | Home hero + Portfolio #1 |
-| `assets/images/pih/` | `pih-banner.jpg` | Pacific International Hospital roll-up banner ("Your Complete Care Network") | Portfolio #4 |
-| `assets/images/pih/` | `pih-story-wall.jpg` | PIH indoor milestone timeline wall signage | Portfolio #5 |
-| `assets/images/pih/` | `pih-emergency.jpg` | Illuminated "Emergency" signage installation (backlit) | Portfolio #6 |
-| `assets/images/landcros/` | `landcros-front.jpg` | LANDCROS pylon signage 3D render, front-facing view | Home hero + Portfolio #3 |
-| `assets/images/landcros/` | `landcros-angle.jpg` | LANDCROS pylon signage 3D render, angled perspective view | Portfolio #2 |
-| `assets/images/city-pharmacy/` | `city-pharmacy.jpg` | City Pharmacy illuminated storefront signage | Portfolio #7 |
-| `assets/images/pngeiti/` | `merch-set.jpg` | PNGEITI branded merchandise set (cap, notebook, water bottle, lanyard) | Portfolio #8 |
-| `assets/images/pngeiti/` | `merch-pen.jpg` | PNGEITI branded corporate pen | Portfolio #9 |
-| `assets/images/pngeiti/` | `merch-mug.jpg` | PNGEITI branded stainless steel insulated mug | Portfolio #10 |
+| File | Photo content | Used on |
+|---|---|---|
+| `assets/images/pih/pih-wayfinding.webp` | PIH "100M THIS WAY" directional wayfinding sign | Home hero + Portfolio #1 |
+| `assets/images/landcros/landcros-angle.webp` | LANDCROS pylon sign (angled view, Hitachi→LANDCROS notice) | Portfolio #2 |
+| `assets/images/landcros/landcros-front.webp` | LANDCROS pylon sign (front view) | Home hero + Portfolio #3 |
+| `assets/images/pih/pih-banner.webp` | PIH "Your Complete Care Network" roll-up banner | Portfolio #4 |
+| `assets/images/pih/pih-story-wall.webp` | PIH milestone/services wall | Portfolio #5 |
+| `assets/images/pih/pih-emergency.webp` | PIH Emergency signage | Portfolio #6 |
 
-## Client/project folders
-- `assets/images/pih/` — Pacific International Hospital project
-- `assets/images/landcros/` — LANDCROS project
-- `assets/images/city-pharmacy/` — City Pharmacy project
-- `assets/images/pngeiti/` — PNGEITI merchandise
+> ⚠️ 4 slots still pending confirmation (see `photo-contact-sheet.png`):
+> City Pharmacy (#?), PNGEITI merch set, PNGEITI pen, PNGEITI mug.
 
-## Quick checklist
-1. Rename each photo to the exact filename in the table above.
-2. Move it into the matching folder.
-3. All HTML pages already point to these paths — no code changes needed.
+## Additional photos — organised by client (not yet used on the site)
+
+### `assets/images/pih/` (Pacific International Hospital)
+- `pih-specialty-services.webp` — Paediatrics/Dental/Specialty services signage
+- `pih-history-timeline.webp` — PIH history timeline (2001–2025)
+- `pih-billboard.webp` — PIH billboard
+- `pih-staff.webp` — staff at work
+
+### `assets/images/dts/` (DTS2 — Digital Transformation Summit)
+- `dts-cap-sample.webp`, `dts-cap.webp`, `dts-tumbler.webp`
+
+### `assets/images/pngeiti/`
+- `merch-set.webp` (gift items — pending confirmation), `cap-sample.webp`,
+  `gift-item-sample.webp`, `tote-bag.webp`, `merch-pen.webp` (pending confirmation)
+
+### `assets/images/ombudsman/` (Ombudsman Commission)
+- `t-shirt-sample.webp`, `merch-good-governance.webp`, `merch-item.webp`
+
+### `assets/images/samples/`
+- `fvc-tambayan-merch.webp`, `lanyard-sample.webp`, `printing-in-progress.webp`,
+  `covid-sleeves.webp`, `merch-2.webp`, `merch-3.webp`, `merch-5.webp`,
+  `merch-6.webp`, `merch-7.webp`
+
+## Re-compress after replacing any photo
+```
+convert input.jpg -resize '1200x1200>' -quality 72 -define webp:method=6 output.webp
+```
