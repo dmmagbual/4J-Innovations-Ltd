@@ -11,19 +11,21 @@ Original un-compressed files are preserved in git history on
 - `assets/logo.jpg` — brand logo (navbar + footer + Open Graph)
 - `assets/favicon.jpg` — browser tab icon
 
-## Project photos — used by the website
+## Project photos — used by the website (all resolve)
 
 | File | Photo content | Used on |
 |---|---|---|
-| `assets/images/pih/pih-wayfinding.webp` | PIH "100M THIS WAY" directional wayfinding sign | Home hero + Portfolio #1 |
-| `assets/images/landcros/landcros-angle.webp` | LANDCROS pylon sign (angled view, Hitachi→LANDCROS notice) | Portfolio #2 |
-| `assets/images/landcros/landcros-front.webp` | LANDCROS pylon sign (front view) | Home hero + Portfolio #3 |
-| `assets/images/pih/pih-banner.webp` | PIH "Your Complete Care Network" roll-up banner | Portfolio #4 |
-| `assets/images/pih/pih-story-wall.webp` | PIH milestone/services wall | Portfolio #5 |
-| `assets/images/pih/pih-emergency.webp` | PIH Emergency signage | Portfolio #6 |
+| `assets/images/pih/pih-wayfinding.webp` | PIH "100M THIS WAY" directional wayfinding sign | Home hero + Portfolio |
+| `assets/images/landcros/landcros-angle.webp` | LANDCROS pylon sign (angled view) | Portfolio |
+| `assets/images/landcros/landcros-front.webp` | LANDCROS pylon sign (front view) | Home hero + Portfolio |
+| `assets/images/pih/pih-banner.webp` | PIH "Your Complete Care Network" roll-up banner | Portfolio |
+| `assets/images/pih/pih-story-wall.webp` | PIH milestone/services wall | Portfolio |
+| `assets/images/pih/pih-emergency.webp` | PIH Emergency signage | Portfolio |
+| `assets/images/pngeiti/merch-set.webp` | PNGEITI gift items / merchandise set | Portfolio + Home + Services |
+| `assets/images/dts/dts-tumbler.webp` | DTS2 Digital Transformation Summit tumbler | Portfolio |
 
-> ⚠️ 4 slots still pending confirmation (see `photo-contact-sheet.png`):
-> City Pharmacy (#?), PNGEITI merch set, PNGEITI pen, PNGEITI mug.
+> City Pharmacy item was removed from the portfolio (photo not among the uploads),
+> and the PNGEITI pen slot was removed (no pen photo provided).
 
 ## Additional photos — organised by client (not yet used on the site)
 
@@ -34,11 +36,10 @@ Original un-compressed files are preserved in git history on
 - `pih-staff.webp` — staff at work
 
 ### `assets/images/dts/` (DTS2 — Digital Transformation Summit)
-- `dts-cap-sample.webp`, `dts-cap.webp`, `dts-tumbler.webp`
+- `dts-cap-sample.webp`, `dts-cap.webp`
 
 ### `assets/images/pngeiti/`
-- `merch-set.webp` (gift items — pending confirmation), `cap-sample.webp`,
-  `gift-item-sample.webp`, `tote-bag.webp`, `merch-pen.webp` (pending confirmation)
+- `cap-sample.webp`, `gift-item-sample.webp`, `tote-bag.webp`
 
 ### `assets/images/ombudsman/` (Ombudsman Commission)
 - `t-shirt-sample.webp`, `merch-good-governance.webp`, `merch-item.webp`
@@ -46,7 +47,7 @@ Original un-compressed files are preserved in git history on
 ### `assets/images/samples/`
 - `fvc-tambayan-merch.webp`, `lanyard-sample.webp`, `printing-in-progress.webp`,
   `covid-sleeves.webp`, `merch-2.webp`, `merch-3.webp`, `merch-5.webp`,
-  `merch-6.webp`, `merch-7.webp`
+  `merch-6.webp`, `merch-6b.webp`, `merch-7.webp`
 
 ## Re-compress after replacing any photo
 ```
