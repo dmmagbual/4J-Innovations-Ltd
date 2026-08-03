@@ -1,3 +1,7 @@
+/* ============================================================
+   4J Innovation Limited — main.js  v2.0
+   Added: Google Maps / Google Earth (satellite) map view toggle
+============================================================ */
 document.addEventListener('DOMContentLoaded', function () {
 
   /* YEAR */
@@ -181,6 +185,28 @@ document.addEventListener('DOMContentLoaded', function () {
       quoteForm.reset();
       formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
       setTimeout(function () { formSuccess.classList.remove('show'); }, 6000);
+    });
+  }
+
+  /* MAP VIEW TOGGLE (Map / Google Earth satellite) */
+  var locationMap = document.getElementById('locationMap');
+  var mapBtns = document.querySelectorAll('.map-view-btn');
+  if (locationMap && mapBtns.length) {
+    var MAP_SOURCES = {
+      roadmap: 'https://www.google.com/maps?q=Lot+128+Sec+64+Leander+Street+Boroko+Port+Moresby+Papua+New+Guinea&t=m&z=17&output=embed',
+      satellite: 'https://www.google.com/maps?q=Lot+128+Sec+64+Leander+Street+Boroko+Port+Moresby+Papua+New+Guinea&t=k&z=17&output=embed'
+    };
+    mapBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var view = btn.getAttribute('data-map-view');
+        if (!MAP_SOURCES[view]) return;
+        mapBtns.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-pressed', active ? 'true' : 'false');
+        });
+        locationMap.src = MAP_SOURCES[view];
+      });
     });
   }
 
