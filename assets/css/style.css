@@ -1,4 +1,8 @@
 /* ============================================================
+   4J Innovation Limited — style.css  v2.0
+   Added: Google Maps / Google Earth (satellite) map toolbar
+============================================================ */
+/* ============================================================
    ROOT / RESET
 =============================================================== */
 :root{
@@ -459,8 +463,18 @@ section{ position:relative; scroll-margin-top: var(--nav-h); }
 .form-success{ display:none; align-items:center; gap:12px; background:rgba(34,197,94,.15); border:1px solid rgba(34,197,94,.4); color:#86efac; padding:14px 18px; border-radius:12px; font-size:14px; font-weight:600; margin-bottom:16px; }
 .form-success.show{ display:flex; }
 .form-success svg{ width:20px; height:20px; flex-shrink:0; }
-.map-wrap{ margin-top:60px; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--gray-200); }
-.map-wrap iframe{ width:100%; height:380px; border:0; display:block; }
+.map-wrap{ margin-top:60px; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); border:1px solid var(--gray-200); background:var(--dark); }
+.map-toolbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px 18px; background:var(--dark); }
+.map-views{ display:inline-flex; gap:6px; background:rgba(255,255,255,.08); padding:5px; border-radius:var(--radius-full); }
+.map-view-btn{ display:inline-flex; align-items:center; gap:7px; padding:8px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:700; color:rgba(255,255,255,.65); transition:all .3s var(--ease); }
+.map-view-btn svg{ width:15px; height:15px; }
+.map-view-btn:hover{ color:#fff; }
+.map-view-btn.active{ background:var(--grad-brand); color:#fff; box-shadow:var(--shadow-orange); }
+.map-open{ display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#fff; background:rgba(255,255,255,.08); padding:9px 16px; border-radius:var(--radius-full); transition:all .3s var(--ease); }
+.map-open svg{ width:14px; height:14px; }
+.map-open:hover{ background:var(--orange); }
+.map-wrap iframe{ width:100%; height:420px; border:0; display:block; }
+@media(max-width:560px){ .map-wrap iframe{ height:320px; } .map-toolbar{ justify-content:center; } }
 
 /* ============================================================
    FOOTER

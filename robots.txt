@@ -1,0 +1,8 @@
+# robots.txt — 4J Innovation Limited (https://4jinnovation.com/)
+
+User-agent: *
+Allow: /
+Disallow: /index-backup.html
+
+# Sitemap location
+Sitemap: https://4jinnovation.com/sitemap.xml
